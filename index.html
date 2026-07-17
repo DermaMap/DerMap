@@ -40,15 +40,15 @@ body{
 
 :root{
 
-    --primary:#2455E6;
-    --primary-light:#4F7CFF;
-    --secondary:#F4F7FE;
+    --primary:#F28E8E;
+    --primary-light:#F6A4A4;
+    --secondary:#FFF6F6;
 
     --text:#1F2937;
     --gray:#64748B;
     --white:#ffffff;
 
-    --shadow:0 20px 50px rgba(25,55,125,.10);
+    --shadow:0 20px 50px rgba(242,142,142,.18);
 
 }
 
@@ -73,7 +73,7 @@ header{
     backdrop-filter:blur(15px);
     background:rgba(255,255,255,.85);
 
-    border-bottom:1px solid rgba(0,0,0,.05);
+    border-bottom:1px solid #FDE1E1;
 
     z-index:100;
 
@@ -139,9 +139,9 @@ nav a:hover{
     align-items:center;
 
     background:
-    radial-gradient(circle at top right,#dfe8ff 0%,transparent 40%),
-    radial-gradient(circle at bottom left,#edf2ff 0%,transparent 35%),
-    #f7f9fc;
+    radial-gradient(circle at top right,#FFE6E6 0%,transparent 40%),
+    radial-gradient(circle at bottom left,#FFF4F4 0%,transparent 35%),
+    #FFFDFD;
 
 }
 
@@ -162,9 +162,8 @@ nav a:hover{
 
     border-radius:50px;
 
-    background:#eaf0ff;
-
-    color:var(--primary);
+    background:#FFE9E9;
+    color:#D86E6E;
 
     font-weight:600;
 
@@ -261,7 +260,7 @@ nav a:hover{
 
     border-radius:14px;
 
-    background:#edf3ff;
+    background:#FFECEC;
 
     display:flex;
     justify-content:center;
@@ -270,7 +269,31 @@ nav a:hover{
     font-size:22px;
 
 }
+</section>  
+<section class="search-section">
 
+<div class="container">
+
+<h2>Find Your Perfect Treatment</h2>
+
+<input
+type="text"
+placeholder="Search procedures, clinics or specialists...">
+
+<div class="tags">
+
+<span>Hydrafacial</span>
+<span>Botox</span>
+<span>Laser</span>
+<span>PRP</span>
+<span>Chemical Peel</span>
+<span>Microneedling</span>
+
+</div>
+
+</div>
+
+</section>
 /* =====================================================
    ABOUT
 ===================================================== */
@@ -344,11 +367,12 @@ section{
 
 .card{
 
-    background:#f8fbff;
+    background:#FFFDFD;
+    
 
     padding:35px;
 
-    border-radius:24px;
+    border:1px solid #FFE3E3;
 
     transition:.35s;
 
@@ -381,7 +405,57 @@ section{
     font-size:42px;
 
 }
+<section>
 
+<div class="container">
+
+<h2 class="section-title">
+How It Works
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="emoji">1️⃣</div>
+
+<h3>Choose Treatment</h3>
+
+<p>
+Explore cosmetic procedures and learn which one fits your needs.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="emoji">2️⃣</div>
+
+<h3>Compare Clinics</h3>
+
+<p>
+Browse trusted beauty clinics with ratings and prices.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="emoji">3️⃣</div>
+
+<h3>Book Online</h3>
+
+<p>
+Schedule your appointment in just a few clicks.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 /* =====================================================
    CONTACT
 ===================================================== */
@@ -430,7 +504,77 @@ footer{
 /* =====================================================
    MOBILE
 ===================================================== */
+.search-section{
 
+padding:80px 0;
+text-align:center;
+
+}
+
+.search-section h2{
+
+margin-bottom:30px;
+
+}
+
+.search-section input{
+
+width:100%;
+max-width:700px;
+
+padding:18px;
+
+border:none;
+
+border-radius:16px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+font-size:17px;
+
+outline:none;
+
+}
+
+.tags{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin-top:35px;
+
+}
+
+.tags span{
+
+padding:12px 22px;
+
+background:#FFEAEA;
+
+border-radius:50px;
+
+color:#F28E8E;
+
+font-weight:600;
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.tags span:hover{
+
+background:#F28E8E;
+
+color:white;
+
+}
 @media(max-width:900px){
 
 .hero-content,
@@ -577,7 +721,15 @@ Book appointments easily
 </div>
 
 </div>
+<div class="item">
 
+<div class="icon">💰</div>
+
+<div>
+Compare prices instantly
+</div>
+
+</div>
 </section>
 
 <!-- ===================================================
