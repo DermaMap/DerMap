@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DerMap | Discover Trusted Beauty Clinics</title>
     <style>
+        /* --- GLOBAL STYLES --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background-color: #fff; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background-color: #fff; scroll-behavior: smooth; }
         
-        /* Navigation */
+        /* --- NAVIGATION --- */
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.8rem; font-weight: 700; color: #e57373; letter-spacing: -0.5px; }
+        .logo { font-size: 1.8rem; font-weight: 700; color: #e57373; letter-spacing: -0.5px; text-decoration: none; }
         .nav-links { display: flex; list-style: none; gap: 2.5rem; }
         .nav-links a { text-decoration: none; color: #2c3e50; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #e57373; }
 
-        /* Hero Section */
+        /* --- HERO SECTION --- */
         .hero { padding: 5rem 5%; background: linear-gradient(135deg, #fff5f5 0%, #fff 100%); text-align: center; }
         .hero-badge { display: inline-block; padding: 0.5rem 1.5rem; background: #e57373; color: white; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; }
         .hero h1 { font-size: 3.5rem; color: #2c3e50; margin-bottom: 1rem; line-height: 1.2; }
@@ -24,14 +25,13 @@
         .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(229, 115, 115, 0.4); }
         .hero-features { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 3rem; }
         .hero-feature { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; color: #555; font-weight: 500; }
-        .hero-feature span { font-size: 1.5rem; }
 
-        /* General Section Styles */
+        /* --- GENERAL SECTIONS --- */
         section { padding: 5rem 5%; }
         .section-title { font-size: 2.5rem; color: #2c3e50; text-align: center; margin-bottom: 1rem; }
         .section-subtitle { text-align: center; color: #666; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; }
 
-        /* About Section */
+        /* --- ABOUT SECTION --- */
         .about { background: #fff; }
         .about-content { max-width: 900px; margin: 0 auto; text-align: center; }
         .about p { font-size: 1.2rem; color: #555; margin-bottom: 2rem; line-height: 1.8; }
@@ -40,24 +40,21 @@
         .about-card h3 { color: #e57373; font-size: 1.5rem; margin-bottom: 1rem; }
         .about-card p { color: #666; font-size: 1rem; line-height: 1.7; margin-bottom: 0; }
 
-        /* Procedures Section (The Cards) */
+        /* --- PROCEDURES SECTION --- */
         .procedures { background: #f8f9fa; }
         .procedures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .procedure-card { background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: transform 0.3s, box-shadow 0.3s; text-align: left; display: flex; flex-direction: column; overflow: hidden; }
         .procedure-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        
-        /* Image Styling for Cards */
         .card-image-container { width: 100%; height: 200px; overflow: hidden; }
         .card-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .procedure-card:hover .card-image-container img { transform: scale(1.05); }
-
         .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
         .procedure-card h3 { color: #2c3e50; font-size: 1.3rem; margin-bottom: 0.75rem; }
         .procedure-card p { color: #666; font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
         .learn-more { color: #e57373; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; margin-top: auto; }
         .learn-more:hover { color: #d32f2f; text-decoration: underline; }
 
-        /* Features Grid */
+        /* --- FEATURES SECTION --- */
         .features { background: #fff; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .feature-card { background: #f8f9fa; padding: 2.5rem; border-radius: 15px; transition: transform 0.3s; }
@@ -66,86 +63,35 @@
         .feature-card h3 { color: #2c3e50; font-size: 1.4rem; margin-bottom: 0.75rem; }
         .feature-card p { color: #666; line-height: 1.7; }
 
-              <!-- Clinics Directory Section -->
-    <section id="clinics" class="clinics-section">
-        <h2 class="section-title">Top Rated Clinics</h2>
-        <p class="section-subtitle">Trusted professionals near you with verified reviews.</p>
-        
-        <div class="clinics-grid">
-            <!-- Clinic Card 1 -->
-            <div class="clinic-card">
-                <div class="clinic-image-container">
-                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Lumina Aesthetics">
-                    <span class="rating-badge">⭐ 4.9 (128)</span>
-                </div>
-                <div class="card-content">
-                    <h3>Lumina Aesthetics</h3>
-                    <p class="location">📍 Downtown Medical District</p>
-                    <p class="description">Specializing in advanced laser treatments and non-surgical facelifts with board-certified dermatologists.</p>
-                    <div class="clinic-tags">
-                        <span class="tag">Laser</span>
-                        <span class="tag">Botox</span>
-                        <span class="tag">Fillers</span>
-                    </div>
-                    <a href="#" class="btn-outline">View Profile</a>
-                </div>
-            </div>
+        /* --- CLINICS SECTION (NEW) --- */
+        .clinics-section { background: #fff; padding-bottom: 6rem; }
+        .clinics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto 3rem; }
+        .clinic-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; }
+        .clinic-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(229, 115, 115, 0.15); }
+        .clinic-image-container { position: relative; height: 220px; overflow: hidden; }
+        .clinic-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .clinic-card:hover .clinic-image-container img { transform: scale(1.08); }
+        .rating-badge { position: absolute; bottom: 15px; left: 15px; background: white; padding: 6px 12px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; color: #2c3e50; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .clinic-card .card-content { padding: 1.8rem; }
+        .clinic-card h3 { color: #2c3e50; font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .location { color: #e57373; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 5px; }
+        .description { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        .clinic-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
+        .tag { background: #fff5f5; color: #e57373; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
+        .btn-outline { display: block; text-align: center; padding: 12px; border: 2px solid #e57373; color: #e57373; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s; }
+        .btn-outline:hover { background: #e57373; color: white; }
+        .view-all-container { text-align: center; margin-top: 2rem; }
 
-            <!-- Clinic Card 2 -->
-            <div class="clinic-card">
-                <div class="clinic-image-container">
-                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Velvet Skin Studio">
-                    <span class="rating-badge">⭐ 4.8 (96)</span>
-                </div>
-                <div class="card-content">
-                    <h3>Velvet Skin Studio</h3>
-                    <p class="location">📍 Westside Wellness Hub</p>
-                    <p class="description">A luxury boutique clinic focused on holistic skin rejuvenation, PRP therapy, and organic chemical peels.</p>
-                    <div class="clinic-tags">
-                        <span class="tag">PRP</span>
-                        <span class="tag">Peels</span>
-                        <span class="tag">Hydrafacial</span>
-                    </div>
-                    <a href="#" class="btn-outline">View Profile</a>
-                </div>
-            </div>
-
-            <!-- Clinic Card 3 -->
-            <div class="clinic-card">
-                <div class="clinic-image-container">
-                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Nova Cosmetic Center">
-                    <span class="rating-badge">⭐ 4.7 (215)</span>
-                </div>
-                <div class="card-content">
-                    <h3>Nova Cosmetic Center</h3>
-                    <p class="location">📍 North Park Plaza</p>
-                    <p class="description">High-volume center offering competitive pricing on microneedling, body contouring, and injectables.</p>
-                    <div class="clinic-tags">
-                        <span class="tag">Microneedling</span>
-                        <span class="tag">Body Contour</span>
-                    </div>
-                    <a href="#" class="btn-outline">View Profile</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="view-all-container">
-            <a href="#" class="cta-button">View All 45+ Clinics</a>
-        </div>
-    </section>
-        
-        /* CTA Section */
+        /* --- CTA & FOOTER --- */
         .cta-section { background: linear-gradient(135deg, #e57373 0%, #d32f2f 100%); color: white; text-align: center; padding: 5rem 5%; }
         .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
         .cta-section p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95; }
         .cta-button-white { display: inline-block; padding: 1rem 2.5rem; background: white; color: #e57373; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s; }
         .cta-button-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
-
-        /* Footer */
         footer { background: #2c3e50; color: white; text-align: center; padding: 2rem 5%; }
         footer p { opacity: 0.9; }
 
-        /* Responsive */
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .nav-links { gap: 1.5rem; }
             .hero h1 { font-size: 2.5rem; }
@@ -158,10 +104,11 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">DERMAP</div>
+        <a href="#" class="logo">DERMAP</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#procedures">Procedures</a></li>
+            <li><a href="#clinics">Clinics</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -175,11 +122,11 @@
         <a href="#procedures" class="cta-button">Explore Procedures</a>
         
         <div class="hero-features">
-            <div class="hero-feature"><span>📍</span><span>Find trusted clinics nearby</span></div>
-            <div class="hero-feature"><span>💉</span><span>Learn about cosmetic procedures</span></div>
-            <div class="hero-feature"><span>⭐</span><span>Read verified client reviews</span></div>
-            <div class="hero-feature"><span>📆</span><span>Book appointments easily</span></div>
-            <div class="hero-feature"><span>💰</span><span>Compare prices instantly</span></div>
+            <div class="hero-feature"><span>📍</span> Find trusted clinics nearby</div>
+            <div class="hero-feature"><span>💉</span> Learn about cosmetic procedures</div>
+            <div class="hero-feature"><span>⭐</span> Read verified client reviews</div>
+            <div class="hero-feature"><span>📆</span> Book appointments easily</div>
+            <div class="hero-feature"><span>💰</span> Compare prices instantly</div>
         </div>
     </section>
 
@@ -202,101 +149,78 @@
         </div>
     </section>
 
-    <!-- Procedures Section (The 8 Cards with Images) -->
+    <!-- Procedures Section -->
     <section id="procedures" class="procedures">
         <h2 class="section-title">Explore Popular Procedures</h2>
         <p class="section-subtitle">Learn about the most in-demand cosmetic treatments, how they work, benefits, recovery and what to expect.</p>
         
         <div class="procedures-grid">
-            <!-- Card 1: Hydrafacial -->
+            <!-- Card 1 -->
             <div class="procedure-card">
-                <div class="card-image-container">
-                    <img src="hydrafacial.jpg" alt="Hydrafacial Treatment">
-                </div>
+                <div class="card-image-container"><img src="hydrafacial.jpg" alt="Hydrafacial"></div>
                 <div class="card-content">
                     <h3>Hydrafacial</h3>
                     <p>Deep cleansing, exfoliation and hydration for a healthy, glowing complexion.</p>
                     <a href="hydrafacial.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
-
-            <!-- Card 2: Microneedling -->
+            <!-- Card 2 -->
             <div class="procedure-card">
-                <div class="card-image-container">
-                    <img src="microneedling.jpg" alt="Microneedling Treatment">
-                </div>
+                <div class="card-image-container"><img src="microneedling.jpg" alt="Microneedling"></div>
                 <div class="card-content">
                     <h3>Microneedling</h3>
                     <p>Stimulates collagen production to reduce scars, fine lines and improve texture.</p>
                     <a href="microneedling.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
-
-            <!-- Card 3: Botox -->
+            <!-- Card 3 -->
             <div class="procedure-card">
-                <div class="card-image-container">
-                    <img src="botox.jpg" alt="Botox Injection">
-                </div>
+                <div class="card-image-container"><img src="botox.jpg" alt="Botox"></div>
                 <div class="card-content">
                     <h3>Botox</h3>
                     <p>Smooth dynamic wrinkles and prevent new fine lines from forming.</p>
                     <a href="botox.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
-
-            <!-- Card 4: Dermal Fillers -->
+            <!-- Card 4 -->
             <div class="procedure-card">
-                <div class="card-image-container">
-                    <img src="dermal-fillers.jpg" alt="Dermal Fillers Treatment">
-                </div>
+                <div class="card-image-container"><img src="dermal-fillers.jpg" alt="Dermal Fillers"></div>
                 <div class="card-content">
                     <h3>Dermal Fillers</h3>
                     <p>Restore volume, enhance contours and achieve natural-looking results.</p>
                     <a href="dermal-fillers.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
-
-            <!-- Card 5: Chemical Peels -->
+            <!-- Card 5 -->
             <div class="procedure-card">
-                <div class="card-image-container">
-                    <img src="chemical-peels.jpg" alt="Chemical Peel Application">
-                </div>
+                <div class="card-image-container"><img src="chemical-peels.jpg" alt="Chemical Peels"></div>
                 <div class="card-content">
                     <h3>Chemical Peels</h3>
                     <p>Exfoliate and renew skin to improve tone, texture and reduce imperfections.</p>
                     <a href="chemical-peels.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
-
-            <!-- Card 6: Laser Hair Removal -->
+            <!-- Card 6 -->
             <div class="procedure-card">
-                <div class="card-image-container">
-                    <img src="laser-hair-removal.jpg" alt="Laser Hair Removal">
-                </div>
+                <div class="card-image-container"><img src="laser-hair-removal.jpg" alt="Laser Hair Removal"></div>
                 <div class="card-content">
                     <h3>Laser Hair Removal</h3>
                     <p>Long-term hair reduction for smooth, clear and hassle-free skin.</p>
                     <a href="laser-hair-removal.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
-
-            <!-- Card 7: Laser Resurfacing -->
+            <!-- Card 7 -->
             <div class="procedure-card">
-                <div class="card-image-container">
-                    <img src="laser-resurfacing.jpg" alt="Laser Resurfacing">
-                </div>
+                <div class="card-image-container"><img src="laser-resurfacing.jpg" alt="Laser Resurfacing"></div>
                 <div class="card-content">
                     <h3>Laser Resurfacing</h3>
                     <p>Improve skin texture, tone and reduce scars and sun damage.</p>
                     <a href="laser-resurfacing.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
-
-            <!-- Card 8: PRP Therapy -->
+            <!-- Card 8 -->
             <div class="procedure-card">
-                <div class="card-image-container">
-                    <img src="prp-therapy.jpg" alt="PRP Therapy">
-                </div>
+                <div class="card-image-container"><img src="prp-therapy.jpg" alt="PRP Therapy"></div>
                 <div class="card-content">
                     <h3>PRP Therapy</h3>
                     <p>Uses your own plasma to promote healing and natural rejuvenation.</p>
@@ -327,7 +251,7 @@
                 <p>Read authentic experiences from real clients to choose the best clinic with confidence.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">💸</div>
+                <div class="feature-icon">💰</div>
                 <h3>Compare Prices</h3>
                 <p>View estimated prices from different clinics before making a decision.</p>
             </div>
@@ -344,55 +268,74 @@
         </div>
     </section>
 
-            /* Clinics Section Styles */
-        .clinics-section { background: #fff; padding-bottom: 6rem; }
-        .clinics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto 3rem; }
+    <!-- Clinics Directory Section (NEW) -->
+    <section id="clinics" class="clinics-section">
+        <h2 class="section-title">Top Rated Clinics</h2>
+        <p class="section-subtitle">Trusted professionals near you with verified reviews.</p>
         
-        .clinic-card { 
-            background: white; 
-            border-radius: 20px; 
-            overflow: hidden; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06); 
-            border: 1px solid #f0f0f0; 
-            transition: all 0.3s ease; 
-        }
-        .clinic-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(229, 115, 115, 0.15); }
+        <div class="clinics-grid">
+            <!-- Clinic 1 -->
+            <div class="clinic-card">
+                <div class="clinic-image-container">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Lumina Aesthetics">
+                    <span class="rating-badge">⭐ 4.9 (128)</span>
+                </div>
+                <div class="card-content">
+                    <h3>Lumina Aesthetics</h3>
+                    <p class="location">📍 Downtown Medical District</p>
+                    <p class="description">Specializing in advanced laser treatments and non-surgical facelifts with board-certified dermatologists.</p>
+                    <div class="clinic-tags">
+                        <span class="tag">Laser</span>
+                        <span class="tag">Botox</span>
+                        <span class="tag">Fillers</span>
+                    </div>
+                    <a href="#" class="btn-outline">View Profile</a>
+                </div>
+            </div>
+
+            <!-- Clinic 2 -->
+            <div class="clinic-card">
+                <div class="clinic-image-container">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Velvet Skin Studio">
+                    <span class="rating-badge">⭐ 4.8 (96)</span>
+                </div>
+                <div class="card-content">
+                    <h3>Velvet Skin Studio</h3>
+                    <p class="location">📍 Westside Wellness Hub</p>
+                    <p class="description">A luxury boutique clinic focused on holistic skin rejuvenation, PRP therapy, and organic chemical peels.</p>
+                    <div class="clinic-tags">
+                        <span class="tag">PRP</span>
+                        <span class="tag">Peels</span>
+                        <span class="tag">Hydrafacial</span>
+                    </div>
+                    <a href="#" class="btn-outline">View Profile</a>
+                </div>
+            </div>
+
+            <!-- Clinic 3 -->
+            <div class="clinic-card">
+                <div class="clinic-image-container">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Nova Cosmetic Center">
+                    <span class="rating-badge">⭐ 4.7 (215)</span>
+                </div>
+                <div class="card-content">
+                    <h3>Nova Cosmetic Center</h3>
+                    <p class="location"> North Park Plaza</p>
+                    <p class="description">High-volume center offering competitive pricing on microneedling, body contouring, and injectables.</p>
+                    <div class="clinic-tags">
+                        <span class="tag">Microneedling</span>
+                        <span class="tag">Body Contour</span>
+                    </div>
+                    <a href="#" class="btn-outline">View Profile</a>
+                </div>
+            </div>
+        </div>
         
-        .clinic-image-container { position: relative; height: 220px; overflow: hidden; }
-        .clinic-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .clinic-card:hover .clinic-image-container img { transform: scale(1.08); }
-        
-        .rating-badge { 
-            position: absolute; bottom: 15px; left: 15px; 
-            background: white; padding: 6px 12px; 
-            border-radius: 50px; font-size: 0.85rem; 
-            font-weight: 700; color: #2c3e50; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-        }
-        
-        .card-content { padding: 1.8rem; }
-        .clinic-card h3 { color: #2c3e50; font-size: 1.4rem; margin-bottom: 0.5rem; }
-        .location { color: #e57373; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; }
-        .description { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
-        
-        .clinic-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
-        .tag { 
-            background: #fff5f5; color: #e57373; 
-            padding: 5px 12px; border-radius: 6px; 
-            font-size: 0.8rem; font-weight: 600; 
-        }
-        
-        .btn-outline { 
-            display: block; text-align: center; 
-            padding: 12px; border: 2px solid #e57373; 
-            color: #e57373; text-decoration: none; 
-            border-radius: 10px; font-weight: 600; 
-            transition: all 0.3s; 
-        }
-        .btn-outline:hover { background: #e57373; color: white; }
-        
-        .view-all-container { text-align: center; margin-top: 2rem; }
-    
+        <div class="view-all-container">
+            <a href="#" class="cta-button">View All 45+ Clinics</a>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <h2>Ready to Discover Better Beauty Care?</h2>
