@@ -43,12 +43,18 @@
         /* Procedures Section (The Cards) */
         .procedures { background: #f8f9fa; }
         .procedures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .procedure-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: transform 0.3s, box-shadow 0.3s; text-align: left; display: flex; flex-direction: column; }
+        .procedure-card { background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: transform 0.3s, box-shadow 0.3s; text-align: left; display: flex; flex-direction: column; overflow: hidden; }
         .procedure-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        
+        /* Image Styling for Cards */
+        .card-image-container { width: 100%; height: 200px; overflow: hidden; }
+        .card-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .procedure-card:hover .card-image-container img { transform: scale(1.05); }
+
+        .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
         .procedure-card h3 { color: #2c3e50; font-size: 1.3rem; margin-bottom: 0.75rem; }
         .procedure-card p { color: #666; font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
-        .learn-more { color: #e57373; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+        .learn-more { color: #e57373; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; margin-top: auto; }
         .learn-more:hover { color: #d32f2f; text-decoration: underline; }
 
         /* Features Grid */
@@ -101,10 +107,10 @@
         <a href="#procedures" class="cta-button">Explore Procedures</a>
         
         <div class="hero-features">
-            <div class="hero-feature"><span>🏥</span><span>Find trusted clinics nearby</span></div>
+            <div class="hero-feature"><span>📍</span><span>Find trusted clinics nearby</span></div>
             <div class="hero-feature"><span>💉</span><span>Learn about cosmetic procedures</span></div>
             <div class="hero-feature"><span>⭐</span><span>Read verified client reviews</span></div>
-            <div class="hero-feature"><span>📅</span><span>Book appointments easily</span></div>
+            <div class="hero-feature"><span>📆</span><span>Book appointments easily</span></div>
             <div class="hero-feature"><span>💰</span><span>Compare prices instantly</span></div>
         </div>
     </section>
@@ -128,67 +134,106 @@
         </div>
     </section>
 
-    <!-- Procedures Section (The 8 Cards) -->
+    <!-- Procedures Section (The 8 Cards with Images) -->
     <section id="procedures" class="procedures">
         <h2 class="section-title">Explore Popular Procedures</h2>
         <p class="section-subtitle">Learn about the most in-demand cosmetic treatments, how they work, benefits, recovery and what to expect.</p>
         
         <div class="procedures-grid">
-            <!-- Card 1 -->
+            <!-- Card 1: Hydrafacial -->
             <div class="procedure-card">
-                
-                <h3>Hydrafacial</h3>
-                <p>Deep cleansing, exfoliation and hydration for a healthy, glowing complexion.</p>
-                <a href="hydrafacial.html" class="learn-more">Learn more →</a>
+                <div class="card-image-container">
+                    <img src="hydrafacial.jpg" alt="Hydrafacial Treatment">
+                </div>
+                <div class="card-content">
+                    <h3>Hydrafacial</h3>
+                    <p>Deep cleansing, exfoliation and hydration for a healthy, glowing complexion.</p>
+                    <a href="hydrafacial.html" class="learn-more">Learn more →</a>
+                </div>
             </div>
-            <!-- Card 2 -->
+
+            <!-- Card 2: Microneedling -->
             <div class="procedure-card">
-                
-                <h3>Microneedling</h3>
-                <p>Stimulates collagen production to reduce scars, fine lines and improve texture.</p>
-                <a href="microneedling.html" class="learn-more">Learn more →</a>
+                <div class="card-image-container">
+                    <img src="microneedling.jpg" alt="Microneedling Treatment">
+                </div>
+                <div class="card-content">
+                    <h3>Microneedling</h3>
+                    <p>Stimulates collagen production to reduce scars, fine lines and improve texture.</p>
+                    <a href="microneedling.html" class="learn-more">Learn more →</a>
+                </div>
             </div>
-            <!-- Card 3 -->
+
+            <!-- Card 3: Botox -->
             <div class="procedure-card">
-               
-                <h3>Botox</h3>
-                <p>Smooth dynamic wrinkles and prevent new fine lines from forming.</p>
-                <a href="botox.html" class="learn-more">Learn more →</a>
+                <div class="card-image-container">
+                    <img src="botox.jpg" alt="Botox Injection">
+                </div>
+                <div class="card-content">
+                    <h3>Botox</h3>
+                    <p>Smooth dynamic wrinkles and prevent new fine lines from forming.</p>
+                    <a href="botox.html" class="learn-more">Learn more →</a>
+                </div>
             </div>
-            <!-- Card 4 -->
+
+            <!-- Card 4: Dermal Fillers -->
             <div class="procedure-card">
-                <div class="card-icon"></div>
-                <h3>Dermal Fillers</h3>
-                <p>Restore volume, enhance contours and achieve natural-looking results.</p>
-                <a href="dermal-fillers.html" class="learn-more">Learn more →</a>
+                <div class="card-image-container">
+                    <img src="dermal-fillers.jpg" alt="Dermal Fillers Treatment">
+                </div>
+                <div class="card-content">
+                    <h3>Dermal Fillers</h3>
+                    <p>Restore volume, enhance contours and achieve natural-looking results.</p>
+                    <a href="dermal-fillers.html" class="learn-more">Learn more →</a>
+                </div>
             </div>
-            <!-- Card 5 -->
+
+            <!-- Card 5: Chemical Peels -->
             <div class="procedure-card">
-               
-                <h3>Chemical Peels</h3>
-                <p>Exfoliate and renew skin to improve tone, texture and reduce imperfections.</p>
-                <a href="chemical-peels.html" class="learn-more">Learn more →</a>
+                <div class="card-image-container">
+                    <img src="chemical-peels.jpg" alt="Chemical Peel Application">
+                </div>
+                <div class="card-content">
+                    <h3>Chemical Peels</h3>
+                    <p>Exfoliate and renew skin to improve tone, texture and reduce imperfections.</p>
+                    <a href="chemical-peels.html" class="learn-more">Learn more →</a>
+                </div>
             </div>
-            <!-- Card 6 -->
+
+            <!-- Card 6: Laser Hair Removal -->
             <div class="procedure-card">
-                
-                <h3>Laser Hair Removal</h3>
-                <p>Long-term hair reduction for smooth, clear and hassle-free skin.</p>
-                <a href="laser-hair-removal.html" class="learn-more">Learn more →</a>
+                <div class="card-image-container">
+                    <img src="laser-hair-removal.jpg" alt="Laser Hair Removal">
+                </div>
+                <div class="card-content">
+                    <h3>Laser Hair Removal</h3>
+                    <p>Long-term hair reduction for smooth, clear and hassle-free skin.</p>
+                    <a href="laser-hair-removal.html" class="learn-more">Learn more →</a>
+                </div>
             </div>
-            <!-- Card 7 -->
+
+            <!-- Card 7: Laser Resurfacing -->
             <div class="procedure-card">
-                
-                <h3>Laser Resurfacing</h3>
-                <p>Improve skin texture, tone and reduce scars and sun damage.</p>
-                <a href="laser-resurfacing.html" class="learn-more">Learn more →</a>
+                <div class="card-image-container">
+                    <img src="laser-resurfacing.jpg" alt="Laser Resurfacing">
+                </div>
+                <div class="card-content">
+                    <h3>Laser Resurfacing</h3>
+                    <p>Improve skin texture, tone and reduce scars and sun damage.</p>
+                    <a href="laser-resurfacing.html" class="learn-more">Learn more →</a>
+                </div>
             </div>
-            <!-- Card 8 -->
+
+            <!-- Card 8: PRP Therapy -->
             <div class="procedure-card">
-                
-                <h3>PRP Therapy</h3>
-                <p>Uses your own plasma to promote healing and natural rejuvenation.</p>
-                <a href="prp-therapy.html" class="learn-more">Learn more →</a>
+                <div class="card-image-container">
+                    <img src="prp-therapy.jpg" alt="PRP Therapy">
+                </div>
+                <div class="card-content">
+                    <h3>PRP Therapy</h3>
+                    <p>Uses your own plasma to promote healing and natural rejuvenation.</p>
+                    <a href="prp-therapy.html" class="learn-more">Learn more →</a>
+                </div>
             </div>
         </div>
     </section>
@@ -199,32 +244,32 @@
         <p class="section-subtitle">A smarter way to discover trusted beauty professionals.</p>
         <div class="features-grid">
             <div class="feature-card">
-                
+                <div class="feature-icon">🔍</div>
                 <h3>Find Clinics</h3>
                 <p>Search trusted beauty clinics and cosmetic centers near your location.</p>
             </div>
             <div class="feature-card">
-                
+                <div class="feature-icon">📖</div>
                 <h3>Procedure Guide</h3>
                 <p>Understand treatments, benefits, risks, recovery time, and expected results before booking.</p>
             </div>
             <div class="feature-card">
-                
+                <div class="feature-icon">💬</div>
                 <h3>Real Reviews</h3>
                 <p>Read authentic experiences from real clients to choose the best clinic with confidence.</p>
             </div>
             <div class="feature-card">
-                
+                <div class="feature-icon">💸</div>
                 <h3>Compare Prices</h3>
                 <p>View estimated prices from different clinics before making a decision.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"></div>
+                <div class="feature-icon">📅</div>
                 <h3>Book Online</h3>
                 <p>Schedule appointments quickly without making phone calls.</p>
             </div>
             <div class="feature-card">
-                
+                <div class="feature-icon">❤️</div>
                 <h3>Beauty Community</h3>
                 <p>Share experiences, ratings, recommendations, and help others find trusted specialists.</p>
             </div>
