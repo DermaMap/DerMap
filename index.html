@@ -9,9 +9,14 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background-color: #fff; scroll-behavior: smooth; }
         
-        /* --- NAVIGATION --- */
+        /* --- NAVIGATION & LOGO --- */
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.8rem; font-weight: 700; color: #e57373; letter-spacing: -0.5px; text-decoration: none; }
+        
+        /* Two-tone logo styling */
+        .logo { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.5px; text-decoration: none; }
+        .logo-der { color: #e57373; }
+        .logo-map { color: #000000; }
+        
         .nav-links { display: flex; list-style: none; gap: 2.5rem; }
         .nav-links a { text-decoration: none; color: #2c3e50; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #e57373; }
@@ -63,7 +68,7 @@
         .feature-card h3 { color: #2c3e50; font-size: 1.4rem; margin-bottom: 0.75rem; }
         .feature-card p { color: #666; line-height: 1.7; }
 
-        /* --- CLINICS SECTION (NEW) --- */
+        /* --- CLINICS SECTION --- */
         .clinics-section { background: #fff; padding-bottom: 6rem; }
         .clinics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto 3rem; }
         .clinic-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; transition: all 0.3s ease; }
@@ -104,7 +109,7 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <a href="#" class="logo">DERMAP</a>
+        <a href="#" class="logo"><span class="logo-der">DER</span><span class="logo-map">MAP</span></a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#procedures">Procedures</a></li>
@@ -125,7 +130,7 @@
             <div class="hero-feature"><span>📍</span> Find trusted clinics nearby</div>
             <div class="hero-feature"><span>💉</span> Learn about cosmetic procedures</div>
             <div class="hero-feature"><span>⭐</span> Read verified client reviews</div>
-            <div class="hero-feature"><span>📆</span> Book appointments easily</div>
+            <div class="hero-feature"><span>📅</span> Book appointments easily</div>
             <div class="hero-feature"><span>💰</span> Compare prices instantly</div>
         </div>
     </section>
@@ -155,77 +160,37 @@
         <p class="section-subtitle">Learn about the most in-demand cosmetic treatments, how they work, benefits, recovery and what to expect.</p>
         
         <div class="procedures-grid">
-            <!-- Card 1 -->
             <div class="procedure-card">
                 <div class="card-image-container"><img src="hydrafacial.jpg" alt="Hydrafacial"></div>
-                <div class="card-content">
-                    <h3>Hydrafacial</h3>
-                    <p>Deep cleansing, exfoliation and hydration for a healthy, glowing complexion.</p>
-                    <a href="hydrafacial.html" class="learn-more">Learn more →</a>
-                </div>
+                <div class="card-content"><h3>Hydrafacial</h3><p>Deep cleansing, exfoliation and hydration for a healthy, glowing complexion.</p><a href="hydrafacial.html" class="learn-more">Learn more →</a></div>
             </div>
-            <!-- Card 2 -->
             <div class="procedure-card">
                 <div class="card-image-container"><img src="microneedling.jpg" alt="Microneedling"></div>
-                <div class="card-content">
-                    <h3>Microneedling</h3>
-                    <p>Stimulates collagen production to reduce scars, fine lines and improve texture.</p>
-                    <a href="microneedling.html" class="learn-more">Learn more →</a>
-                </div>
+                <div class="card-content"><h3>Microneedling</h3><p>Stimulates collagen production to reduce scars, fine lines and improve texture.</p><a href="microneedling.html" class="learn-more">Learn more →</a></div>
             </div>
-            <!-- Card 3 -->
             <div class="procedure-card">
                 <div class="card-image-container"><img src="botox.jpg" alt="Botox"></div>
-                <div class="card-content">
-                    <h3>Botox</h3>
-                    <p>Smooth dynamic wrinkles and prevent new fine lines from forming.</p>
-                    <a href="botox.html" class="learn-more">Learn more →</a>
-                </div>
+                <div class="card-content"><h3>Botox</h3><p>Smooth dynamic wrinkles and prevent new fine lines from forming.</p><a href="botox.html" class="learn-more">Learn more →</a></div>
             </div>
-            <!-- Card 4 -->
             <div class="procedure-card">
                 <div class="card-image-container"><img src="dermal-fillers.jpg" alt="Dermal Fillers"></div>
-                <div class="card-content">
-                    <h3>Dermal Fillers</h3>
-                    <p>Restore volume, enhance contours and achieve natural-looking results.</p>
-                    <a href="dermal-fillers.html" class="learn-more">Learn more →</a>
-                </div>
+                <div class="card-content"><h3>Dermal Fillers</h3><p>Restore volume, enhance contours and achieve natural-looking results.</p><a href="dermal-fillers.html" class="learn-more">Learn more →</a></div>
             </div>
-            <!-- Card 5 -->
             <div class="procedure-card">
                 <div class="card-image-container"><img src="chemical-peels.jpg" alt="Chemical Peels"></div>
-                <div class="card-content">
-                    <h3>Chemical Peels</h3>
-                    <p>Exfoliate and renew skin to improve tone, texture and reduce imperfections.</p>
-                    <a href="chemical-peels.html" class="learn-more">Learn more →</a>
-                </div>
+                <div class="card-content"><h3>Chemical Peels</h3><p>Exfoliate and renew skin to improve tone, texture and reduce imperfections.</p><a href="chemical-peels.html" class="learn-more">Learn more →</a></div>
             </div>
-            <!-- Card 6 -->
             <div class="procedure-card">
                 <div class="card-image-container"><img src="laser-hair-removal.jpg" alt="Laser Hair Removal"></div>
-                <div class="card-content">
-                    <h3>Laser Hair Removal</h3>
-                    <p>Long-term hair reduction for smooth, clear and hassle-free skin.</p>
-                    <a href="laser-hair-removal.html" class="learn-more">Learn more →</a>
-                </div>
+                <div class="card-content"><h3>Laser Hair Removal</h3><p>Long-term hair reduction for smooth, clear and hassle-free skin.</p><a href="laser-hair-removal.html" class="learn-more">Learn more →</a></div>
             </div>
-            <!-- Card 7 -->
             <div class="procedure-card">
                 <div class="card-image-container"><img src="laser-resurfacing.jpg" alt="Laser Resurfacing"></div>
-                <div class="card-content">
-                    <h3>Laser Resurfacing</h3>
-                    <p>Improve skin texture, tone and reduce scars and sun damage.</p>
-                    <a href="laser-resurfacing.html" class="learn-more">Learn more →</a>
-                </div>
+                <div class="card-content"><h3>Laser Resurfacing</h3><p>Improve skin texture, tone and reduce scars and sun damage.</p><a href="laser-resurfacing.html" class="learn-more">Learn more →</a></div>
             </div>
-            <!-- Card 8 -->
             <div class="procedure-card">
                 <div class="card-image-container"><img src="prp-therapy.jpg" alt="PRP Therapy"></div>
-                <div class="card-content">
-                    <h3>PRP Therapy</h3>
-                    <p>Uses your own plasma to promote healing and natural rejuvenation.</p>
-                    <a href="prp-therapy.html" class="learn-more">Learn more →</a>
-                </div>
+                <div class="card-content"><h3>PRP Therapy</h3><p>Uses your own plasma to promote healing and natural rejuvenation.</p><a href="prp-therapy.html" class="learn-more">Learn more →</a></div>
             </div>
         </div>
     </section>
@@ -235,40 +200,16 @@
         <h2 class="section-title">Why Choose DerMap?</h2>
         <p class="section-subtitle">A smarter way to discover trusted beauty professionals.</p>
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Find Clinics</h3>
-                <p>Search trusted beauty clinics and cosmetic centers near your location.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📖</div>
-                <h3>Procedure Guide</h3>
-                <p>Understand treatments, benefits, risks, recovery time, and expected results before booking.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💬</div>
-                <h3>Real Reviews</h3>
-                <p>Read authentic experiences from real clients to choose the best clinic with confidence.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>Compare Prices</h3>
-                <p>View estimated prices from different clinics before making a decision.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📅</div>
-                <h3>Book Online</h3>
-                <p>Schedule appointments quickly without making phone calls.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">❤️</div>
-                <h3>Beauty Community</h3>
-                <p>Share experiences, ratings, recommendations, and help others find trusted specialists.</p>
-            </div>
+            <div class="feature-card"><div class="feature-icon">🏥</div><h3>Find Clinics</h3><p>Search trusted beauty clinics and cosmetic centers near your location.</p></div>
+            <div class="feature-card"><div class="feature-icon">💉</div><h3>Procedure Guide</h3><p>Understand treatments, benefits, risks, recovery time, and expected results before booking.</p></div>
+            <div class="feature-card"><div class="feature-icon">💬</div><h3>Real Reviews</h3><p>Read authentic experiences from real clients to choose the best clinic with confidence.</p></div>
+            <div class="feature-card"><div class="feature-icon">💰</div><h3>Compare Prices</h3><p>View estimated prices from different clinics before making a decision.</p></div>
+            <div class="feature-card"><div class="feature-icon">📅</div><h3>Book Online</h3><p>Schedule appointments quickly without making phone calls.</p></div>
+            <div class="feature-card"><div class="feature-icon">❤️</div><h3>Beauty Community</h3><p>Share experiences, ratings, recommendations, and help others find trusted specialists.</p></div>
         </div>
     </section>
 
-    <!-- Clinics Directory Section (NEW) -->
+    <!-- Clinics Directory Section -->
     <section id="clinics" class="clinics-section">
         <h2 class="section-title">Top Rated Clinics</h2>
         <p class="section-subtitle">Trusted professionals near you with verified reviews.</p>
@@ -284,11 +225,7 @@
                     <h3>Lumina Aesthetics</h3>
                     <p class="location">📍 Downtown Medical District</p>
                     <p class="description">Specializing in advanced laser treatments and non-surgical facelifts with board-certified dermatologists.</p>
-                    <div class="clinic-tags">
-                        <span class="tag">Laser</span>
-                        <span class="tag">Botox</span>
-                        <span class="tag">Fillers</span>
-                    </div>
+                    <div class="clinic-tags"><span class="tag">Laser</span><span class="tag">Botox</span><span class="tag">Fillers</span></div>
                     <a href="#" class="btn-outline">View Profile</a>
                 </div>
             </div>
@@ -303,29 +240,24 @@
                     <h3>Velvet Skin Studio</h3>
                     <p class="location">📍 Westside Wellness Hub</p>
                     <p class="description">A luxury boutique clinic focused on holistic skin rejuvenation, PRP therapy, and organic chemical peels.</p>
-                    <div class="clinic-tags">
-                        <span class="tag">PRP</span>
-                        <span class="tag">Peels</span>
-                        <span class="tag">Hydrafacial</span>
-                    </div>
+                    <div class="clinic-tags"><span class="tag">PRP</span><span class="tag">Peels</span><span class="tag">Hydrafacial</span></div>
                     <a href="#" class="btn-outline">View Profile</a>
                 </div>
             </div>
 
-            <!-- Clinic 3 -->
+            <!-- Clinic 3 (Updated Photo & Emoji) -->
             <div class="clinic-card">
                 <div class="clinic-image-container">
-                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Nova Cosmetic Center">
+                    <!-- Changed to a bright, modern aesthetic clinic interior -->
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="Nova Cosmetic Center">
                     <span class="rating-badge">⭐ 4.7 (215)</span>
                 </div>
                 <div class="card-content">
                     <h3>Nova Cosmetic Center</h3>
-                    <p class="location"> North Park Plaza</p>
+                    <!-- Added missing 📍 emoji -->
+                    <p class="location">📍 North Park Plaza</p>
                     <p class="description">High-volume center offering competitive pricing on microneedling, body contouring, and injectables.</p>
-                    <div class="clinic-tags">
-                        <span class="tag">Microneedling</span>
-                        <span class="tag">Body Contour</span>
-                    </div>
+                    <div class="clinic-tags"><span class="tag">Microneedling</span><span class="tag">Body Contour</span></div>
                     <a href="#" class="btn-outline">View Profile</a>
                 </div>
             </div>
