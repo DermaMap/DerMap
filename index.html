@@ -344,6 +344,55 @@
         </div>
     </section>
 
+            /* Clinics Section Styles */
+        .clinics-section { background: #fff; padding-bottom: 6rem; }
+        .clinics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto 3rem; }
+        
+        .clinic-card { 
+            background: white; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06); 
+            border: 1px solid #f0f0f0; 
+            transition: all 0.3s ease; 
+        }
+        .clinic-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(229, 115, 115, 0.15); }
+        
+        .clinic-image-container { position: relative; height: 220px; overflow: hidden; }
+        .clinic-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .clinic-card:hover .clinic-image-container img { transform: scale(1.08); }
+        
+        .rating-badge { 
+            position: absolute; bottom: 15px; left: 15px; 
+            background: white; padding: 6px 12px; 
+            border-radius: 50px; font-size: 0.85rem; 
+            font-weight: 700; color: #2c3e50; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        
+        .card-content { padding: 1.8rem; }
+        .clinic-card h3 { color: #2c3e50; font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .location { color: #e57373; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; }
+        .description { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        
+        .clinic-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
+        .tag { 
+            background: #fff5f5; color: #e57373; 
+            padding: 5px 12px; border-radius: 6px; 
+            font-size: 0.8rem; font-weight: 600; 
+        }
+        
+        .btn-outline { 
+            display: block; text-align: center; 
+            padding: 12px; border: 2px solid #e57373; 
+            color: #e57373; text-decoration: none; 
+            border-radius: 10px; font-weight: 600; 
+            transition: all 0.3s; 
+        }
+        .btn-outline:hover { background: #e57373; color: white; }
+        
+        .view-all-container { text-align: center; margin-top: 2rem; }
+    
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <h2>Ready to Discover Better Beauty Care?</h2>
