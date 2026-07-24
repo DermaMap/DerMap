@@ -96,6 +96,20 @@
         footer { background: #2c3e50; color: white; text-align: center; padding: 2rem 5%; }
         footer p { opacity: 0.9; }
 
+        /* --- REVIEWS SECTION --- */
+.reviews-section { background: #f8f9fa; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+.review-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
+.review-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(229, 115, 115, 0.15); }
+.review-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.review-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #fff5f5; }
+.review-info h4 { color: #2c3e50; font-size: 1.1rem; margin-bottom: 0.2rem; }
+.review-info span { color: #666; font-size: 0.9rem; }
+.review-stars { color: #f59e0b; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+.review-comment { color: #555; font-size: 1rem; line-height: 1.7; font-style: italic; flex-grow: 1; }
+.review-comment::before { content: "“"; color: #e57373; font-size: 1.5rem; font-weight: bold; margin-right: 5px; }
+.review-comment::after { content: "”"; color: #e57373; font-size: 1.5rem; font-weight: bold; margin-left: 5px; }
+        
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .nav-links { gap: 1.5rem; }
@@ -268,6 +282,53 @@
         </div>
     </section>
 
+    <!-- Reviews Section -->
+<section id="reviews" class="reviews-section">
+    <h2 class="section-title">What Our Users Say</h2>
+    <p class="section-subtitle">Real experiences from people who found their perfect clinic through DerMap.</p>
+    
+    <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+            <div class="review-header">
+                <img src="https://i.pravatar.cc/150?img=5" alt="Sarah Johnson" class="review-avatar">
+                <div class="review-info">
+                    <h4>Sarah Johnson</h4>
+                    <span>Verified Client</span>
+                </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-comment">DerMap made it so easy to compare clinics and prices. I booked my Hydrafacial through the platform and the experience was flawless. Highly recommend!</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+            <div class="review-header">
+                <img src="https://i.pravatar.cc/150?img=11" alt="Michael Chen" class="review-avatar">
+                <div class="review-info">
+                    <h4>Michael Chen</h4>
+                    <span>Verified Client</span>
+                </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-comment">I was nervous about getting Botox for the first time, but the procedure guides and real reviews on DerMap gave me the confidence to choose the right specialist.</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+            <div class="review-header">
+                <img src="https://i.pravatar.cc/150?img=9" alt="Emma Davis" class="review-avatar">
+                <div class="review-info">
+                    <h4>Emma Davis</h4>
+                    <span>Verified Client</span>
+                </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-comment">The best beauty marketplace I've used. Clean interface, trustworthy clinic profiles, and the booking process is incredibly smooth. Love the price comparison feature!</p>
+        </div>
+    </div>
+</section>
+    
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <h2>Ready to Discover Better Beauty Care?</h2>
