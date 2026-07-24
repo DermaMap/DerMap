@@ -20,7 +20,7 @@
         .nav-links a { text-decoration: none; color: #2c3e50; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #e57373; }
 
-        /* --- HERO SECTION - Updated with better image and minimalistic text --- */
+        /* --- HERO SECTION --- */
         .hero { 
             padding: 8rem 5%; 
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 250, 0.90) 100%), 
@@ -50,9 +50,7 @@
             font-weight: 300;
             letter-spacing: -1px;
         }
-        .hero h1 strong { 
-            font-weight: 500;
-        }
+        .hero h1 strong { font-weight: 500; }
         .hero p { 
             font-size: 1.15rem; 
             color: #555; 
@@ -93,9 +91,7 @@
             font-weight: 400;
             letter-spacing: -0.5px;
         }
-        .section-title strong { 
-            font-weight: 500;
-        }
+        .section-title strong { font-weight: 500; }
         .section-subtitle { 
             text-align: center; 
             color: #666; 
@@ -117,13 +113,7 @@
             text-align: left;
             border: 1px solid #f0f0f0;
         }
-        .about-card h3 { 
-            color: #000; 
-            font-size: 1.3rem; 
-            margin-bottom: 1rem;
-            font-weight: 500;
-            letter-spacing: -0.3px;
-        }
+        .about-card h3 { color: #000; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 500; letter-spacing: -0.3px; }
         .about-card p { color: #666; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0; font-weight: 300; }
 
         /* --- PROCEDURES SECTION --- */
@@ -140,20 +130,12 @@
             flex-direction: column; 
             overflow: hidden; 
         }
-        .procedure-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
-        }
+        .procedure-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
         .card-image-container { width: 100%; height: 220px; overflow: hidden; background-color: #f5f5f5; }
         .card-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .procedure-card:hover .card-image-container img { transform: scale(1.05); }
         .card-content { padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .procedure-card h3 { 
-            color: #000; 
-            font-size: 1.25rem; 
-            margin-bottom: 0.8rem;
-            font-weight: 500;
-        }
+        .procedure-card h3 { color: #000; font-size: 1.25rem; margin-bottom: 0.8rem; font-weight: 500; }
         .procedure-card p { color: #666; font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; font-weight: 300; line-height: 1.6; }
         .learn-more { 
             color: #000; 
@@ -166,10 +148,7 @@
             margin-top: auto;
             border-bottom: 1px solid transparent;
         }
-        .learn-more:hover { 
-            color: #e57373;
-            border-bottom-color: #e57373;
-        }
+        .learn-more:hover { color: #e57373; border-bottom-color: #e57373; }
 
         /* --- FEATURES SECTION --- */
         .features { background: #fff; }
@@ -183,12 +162,7 @@
         }
         .feature-card:hover { transform: translateY(-5px); }
         .feature-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
-        .feature-card h3 { 
-            color: #000; 
-            font-size: 1.25rem; 
-            margin-bottom: 0.8rem;
-            font-weight: 500;
-        }
+        .feature-card h3 { color: #000; font-size: 1.25rem; margin-bottom: 0.8rem; font-weight: 500; }
         .feature-card p { color: #666; line-height: 1.7; font-weight: 300; font-size: 0.95rem; }
 
         /* --- CLINICS SECTION --- */
@@ -202,10 +176,7 @@
             border: 1px solid #f0f0f0;
             transition: all 0.3s ease; 
         }
-        .clinic-card:hover { 
-            transform: translateY(-6px); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-        }
+        .clinic-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .clinic-image-container { position: relative; height: 240px; overflow: hidden; }
         .clinic-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .clinic-card:hover .clinic-image-container img { transform: scale(1.06); }
@@ -223,21 +194,8 @@
             border: 1px solid #e0e0e0;
         }
         .clinic-card .card-content { padding: 2rem; }
-        .clinic-card h3 { 
-            color: #000; 
-            font-size: 1.35rem; 
-            margin-bottom: 0.6rem;
-            font-weight: 500;
-        }
-        .location { 
-            color: #666; 
-            font-size: 0.9rem; 
-            font-weight: 400; 
-            margin-bottom: 1.2rem; 
-            display: flex; 
-            align-items: center; 
-            gap: 5px; 
-        }
+        .clinic-card h3 { color: #000; font-size: 1.35rem; margin-bottom: 0.6rem; font-weight: 500; }
+        .location { color: #666; font-size: 0.9rem; font-weight: 400; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 5px; }
         .description { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; font-weight: 300; }
         .clinic-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.8rem; }
         .tag { 
@@ -264,62 +222,53 @@
             text-transform: uppercase;
             transition: all 0.3s; 
         }
-        .btn-outline:hover { 
-            background: #000; 
-            color: #fff; 
-        }
+        .btn-outline:hover { background: #000; color: #fff; }
         .view-all-container { text-align: center; margin-top: 2rem; }
 
-        /* --- CTA & FOOTER --- */
-        .cta-section { 
-            background: #000; 
-            color: #fff; 
-            text-align: center; 
-            padding: 6rem 5%; 
-        }
-        .cta-section h2 { 
-            font-size: 2.5rem; 
-            margin-bottom: 1rem;
-            font-weight: 400;
-            letter-spacing: -0.5px;
-        }
-        .cta-section p { 
-            font-size: 1.15rem; 
-            margin-bottom: 2.5rem; 
-            opacity: 0.85;
-            font-weight: 300;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .cta-button-white { 
-            display: inline-block; 
-            padding: 1rem 3rem; 
-            background: #fff; 
-            color: #000; 
-            text-decoration: none; 
+        /* --- REAL RESULTS SECTION --- */
+        .results-section { background: #fff; padding: 6rem 5%; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .result-card { 
+            background: white; 
             border-radius: 0;
-            font-weight: 500; 
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.3s;
-            border: 1px solid #fff;
+            overflow: hidden; 
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease; 
         }
-        .cta-button-white:hover { 
-            background: #e57373;
-            border-color: #e57373;
+        .result-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .result-image-container { position: relative; height: 280px; overflow: hidden; }
+        .result-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .result-card:hover .result-image-container img { transform: scale(1.06); }
+        .result-badge { 
+            position: absolute; 
+            top: 15px; 
+            right: 15px; 
+            background: #000; 
             color: #fff;
-            transform: translateY(-2px);
+            padding: 6px 14px; 
+            border-radius: 0;
+            font-size: 0.7rem; 
+            font-weight: 500; 
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
-        footer { 
-            background: #0a0a0a; 
-            color: #888; 
-            text-align: center; 
-            padding: 2.5rem 5%;
-            font-size: 0.9rem;
+        .result-content { padding: 1.8rem; }
+        .result-meta { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
         }
-        footer p { opacity: 0.8; font-weight: 300; }
+        .result-procedure { color: #e57373; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        .result-sessions { color: #888; font-size: 0.8rem; font-weight: 400; }
+        .result-card h3 { color: #000; font-size: 1.25rem; margin-bottom: 0.8rem; font-weight: 500; }
+        .result-description { color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; font-weight: 300; }
+        .result-clinic { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #f0f0f0; font-size: 0.85rem; }
+        .clinic-name { color: #000; font-weight: 500; }
+        .clinic-location { color: #888; font-weight: 400; }
 
         /* --- REVIEWS SECTION --- */
         .reviews-section { background: #f8f9fa; }
@@ -334,31 +283,38 @@
             display: flex; 
             flex-direction: column; 
         }
-        .review-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
-        }
+        .review-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
         .review-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
         .review-avatar { width: 50px; height: 50px; border-radius: 0; object-fit: cover; border: 1px solid #e0e0e0; }
-        .review-info h4 { 
-            color: #000; 
-            font-size: 1.05rem; 
-            margin-bottom: 0.2rem;
-            font-weight: 500;
-        }
+        .review-info h4 { color: #000; font-size: 1.05rem; margin-bottom: 0.2rem; font-weight: 500; }
         .review-info span { color: #888; font-size: 0.85rem; font-weight: 400; }
         .review-stars { color: #000; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
-        .review-comment { 
-            color: #555; 
-            font-size: 0.95rem; 
-            line-height: 1.7; 
-            font-style: italic; 
-            flex-grow: 1;
-            font-weight: 300;
-        }
-        .review-comment::before { content: """; color: #e57373; font-size: 2rem; font-weight: 300; margin-right: 5px; line-height: 0.5; }
-        .review-comment::after { content: """; color: #e57373; font-size: 2rem; font-weight: 300; margin-left: 5px; line-height: 0.5; }
+        .review-comment { color: #555; font-size: 0.95rem; line-height: 1.7; font-style: italic; flex-grow: 1; font-weight: 300; }
+        .review-comment::before { content: "“"; color: #e57373; font-size: 2rem; font-weight: 300; margin-right: 5px; line-height: 0.5; }
+        .review-comment::after { content: "”"; color: #e57373; font-size: 2rem; font-weight: 300; margin-left: 5px; line-height: 0.5; }
         
+        /* --- CTA & FOOTER --- */
+        .cta-section { background: #000; color: #fff; text-align: center; padding: 6rem 5%; }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 400; letter-spacing: -0.5px; }
+        .cta-section p { font-size: 1.15rem; margin-bottom: 2.5rem; opacity: 0.85; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-button-white { 
+            display: inline-block; 
+            padding: 1rem 3rem; 
+            background: #fff; 
+            color: #000; 
+            text-decoration: none; 
+            border-radius: 0;
+            font-weight: 500; 
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 1px solid #fff;
+        }
+        .cta-button-white:hover { background: #e57373; border-color: #e57373; color: #fff; transform: translateY(-2px); }
+        footer { background: #0a0a0a; color: #888; text-align: center; padding: 2.5rem 5%; font-size: 0.9rem; }
+        footer p { opacity: 0.8; font-weight: 300; }
+
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .nav-links { gap: 1.5rem; }
@@ -379,6 +335,7 @@
             <li><a href="#procedures">Procedures</a></li>
             <li><a href="#clinics">Clinics</a></li>
             <li><a href="#features">Features</a></li>
+            <li><a href="#results">Results</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -456,12 +413,12 @@
         <h2 class="section-title">Why Choose <strong>DerMap</strong>?</h2>
         <p class="section-subtitle">A smarter way to discover trusted beauty professionals.</p>
         <div class="features-grid">
-            <div class="feature-card"><div class="feature-icon"></div><h3>Find Clinics</h3><p>Search trusted beauty clinics and cosmetic centers near your location.</p></div>
-            <div class="feature-card"><div class="feature-icon"></div><h3>Procedure Guide</h3><p>Understand treatments, benefits, risks, recovery time, and expected results before booking.</p></div>
-            <div class="feature-card"><div class="feature-icon"></div><h3>Real Reviews</h3><p>Read authentic experiences from real clients to choose the best clinic with confidence.</p></div>
-            <div class="feature-card"><div class="feature-icon"></div><h3>Compare Prices</h3><p>View estimated prices from different clinics before making a decision.</p></div>
-            <div class="feature-card"><div class="feature-icon"></div><h3>Book Online</h3><p>Schedule appointments quickly without making phone calls.</p></div>
-            <div class="feature-card"><div class="feature-icon"></div><h3>Beauty Community</h3><p>Share experiences, ratings, recommendations, and help others find trusted specialists.</p></div>
+            <div class="feature-card"><div class="feature-icon">🏥</div><h3>Find Clinics</h3><p>Search trusted beauty clinics and cosmetic centers near your location.</p></div>
+            <div class="feature-card"><div class="feature-icon">💉</div><h3>Procedure Guide</h3><p>Understand treatments, benefits, risks, recovery time, and expected results before booking.</p></div>
+            <div class="feature-card"><div class="feature-icon">💬</div><h3>Real Reviews</h3><p>Read authentic experiences from real clients to choose the best clinic with confidence.</p></div>
+            <div class="feature-card"><div class="feature-icon">💰</div><h3>Compare Prices</h3><p>View estimated prices from different clinics before making a decision.</p></div>
+            <div class="feature-card"><div class="feature-icon">📅</div><h3>Book Online</h3><p>Schedule appointments quickly without making phone calls.</p></div>
+            <div class="feature-card"><div class="feature-icon">❤️</div><h3>Beauty Community</h3><p>Share experiences, ratings, recommendations, and help others find trusted specialists.</p></div>
         </div>
     </section>
 
@@ -509,7 +466,7 @@
                 </div>
                 <div class="card-content">
                     <h3>Nova Cosmetic Center</h3>
-                    <p class="location"> North Park Plaza</p>
+                    <p class="location">📍 North Park Plaza</p>
                     <p class="description">High-volume center offering competitive pricing on microneedling, body contouring, and injectables.</p>
                     <div class="clinic-tags"><span class="tag">Microneedling</span><span class="tag">Body Contour</span></div>
                     <a href="#" class="btn-outline">View Profile</a>
@@ -566,6 +523,98 @@
                 <div class="review-stars">★★★★★</div>
                 <p class="review-comment">The best beauty marketplace I've used. Clean interface, trustworthy clinic profiles, and the booking process is incredibly smooth. Love the price comparison feature!</p>
             </div>
+        </div>
+    </section>
+
+    <!-- REAL RESULTS SECTION (Ավելացված) -->
+    <section id="results" class="results-section">
+        <h2 class="section-title">Real <strong>Results</strong></h2>
+        <p class="section-subtitle">Authentic transformations from our verified clients and trusted clinics.</p>
+        
+        <div class="results-grid">
+            <!-- Result 1 -->
+            <div class="result-card">
+                <div class="result-image-container">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Hydrafacial result - glowing skin">
+                    <span class="result-badge">Verified Result</span>
+                </div>
+                <div class="result-content">
+                    <div class="result-meta">
+                        <span class="result-procedure">Hydrafacial</span>
+                        <span class="result-sessions">1 Session</span>
+                    </div>
+                    <h3>Radiant Glow Restoration</h3>
+                    <p class="result-description">Visible improvement in skin clarity, hydration, and overall luminosity after a single treatment.</p>
+                    <div class="result-clinic">
+                        <span class="clinic-name">Lumina Aesthetics</span>
+                        <span class="clinic-location">📍 Downtown</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result 2 -->
+            <div class="result-card">
+                <div class="result-image-container">
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Microneedling result - smooth texture">
+                    <span class="result-badge">Verified Result</span>
+                </div>
+                <div class="result-content">
+                    <div class="result-meta">
+                        <span class="result-procedure">Microneedling</span>
+                        <span class="result-sessions">3 Sessions</span>
+                    </div>
+                    <h3>Texture Refinement</h3>
+                    <p class="result-description">Significant reduction in fine lines and acne scars with improved skin texture and firmness.</p>
+                    <div class="result-clinic">
+                        <span class="clinic-name">Velvet Skin Studio</span>
+                        <span class="clinic-location">📍 Westside</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result 3 -->
+            <div class="result-card">
+                <div class="result-image-container">
+                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Chemical peel result - even tone">
+                    <span class="result-badge">Verified Result</span>
+                </div>
+                <div class="result-content">
+                    <div class="result-meta">
+                        <span class="result-procedure">Chemical Peel</span>
+                        <span class="result-sessions">2 Sessions</span>
+                    </div>
+                    <h3>Even Tone Perfection</h3>
+                    <p class="result-description">Diminished hyperpigmentation and sun damage with a brighter, more uniform complexion.</p>
+                    <div class="result-clinic">
+                        <span class="clinic-name">Nova Cosmetic Center</span>
+                        <span class="clinic-location">📍 North Park</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result 4 -->
+            <div class="result-card">
+                <div class="result-image-container">
+                    <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=600&q=80" alt="Botox result - natural smoothness">
+                    <span class="result-badge">Verified Result</span>
+                </div>
+                <div class="result-content">
+                    <div class="result-meta">
+                        <span class="result-procedure">Botox</span>
+                        <span class="result-sessions">1 Session</span>
+                    </div>
+                    <h3>Natural Smoothness</h3>
+                    <p class="result-description">Softened dynamic wrinkles while preserving natural facial expressions and movement.</p>
+                    <div class="result-clinic">
+                        <span class="clinic-name">Lumina Aesthetics</span>
+                        <span class="clinic-location">📍 Downtown</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view-all-container" style="margin-top: 3rem;">
+            <a href="#" class="cta-button">See More Real Results</a>
         </div>
     </section>
     
