@@ -13,7 +13,7 @@
         /* --- NAVIGATION & LOGO --- */
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 1.8rem; font-weight: 300; letter-spacing: 2px; text-decoration: none; text-transform: uppercase; }
-        .logo-der { color: #c47f7f; font-weight: 600; } /* Muted, elegant rose/terracotta */
+        .logo-der { color: #c47f7f; font-weight: 600; } 
         .logo-map { color: #1a1a1a; }
         
         .nav-links { display: flex; list-style: none; gap: 2.5rem; }
@@ -22,25 +22,26 @@
         .nav-cta { padding: 0.6rem 1.5rem; background: #1a1a1a; color: #fff !important; border-radius: 2px; transition: all 0.3s; }
         .nav-cta:hover { background: #c47f7f; }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO SECTION WITH REAL IMAGE --- */
         .hero { 
-            padding: 6rem 5% 4rem; 
-            /* IMAGE TIP: Use a high-quality, elegant background image or split layout featuring a non-Asian model with glowing, healthy, natural skin. Soft, natural lighting. */
-            background: linear-gradient(135deg, #fdfbfb 0%, #f4f0f0 100%); 
+            position: relative;
+            padding: 8rem 5% 5rem; 
+            /* High-quality image of glowing, healthy skin (non-Asian representation) with elegant, soft lighting */
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
             text-align: center; 
         }
-        .hero-badge { display: inline-block; padding: 0.4rem 1.2rem; background: rgba(196, 127, 127, 0.1); color: #c47f7f; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; letter-spacing: 1px; text-transform: uppercase; }
+        .hero-badge { display: inline-block; padding: 0.4rem 1.2rem; background: rgba(196, 127, 127, 0.15); color: #a85a5a; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; letter-spacing: 1px; text-transform: uppercase; }
         .hero h1 { font-size: 3.2rem; color: #1a1a1a; margin-bottom: 1.2rem; line-height: 1.2; font-weight: 300; }
         .hero h1 strong { font-weight: 600; color: #c47f7f; }
-        .hero p { font-size: 1.2rem; color: #555; max-width: 650px; margin: 0 auto 2.5rem; font-weight: 300; }
+        .hero p { font-size: 1.2rem; color: #444; max-width: 650px; margin: 0 auto 2.5rem; font-weight: 300; }
         
         .cta-button { display: inline-block; padding: 1rem 2.5rem; background: #c47f7f; color: white; text-decoration: none; border-radius: 2px; font-weight: 500; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s; box-shadow: 0 4px 15px rgba(196, 127, 127, 0.2); }
         .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196, 127, 127, 0.3); background: #b06d6d; }
         
-        /* Trust Bar */
         .trust-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05); }
-        .trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem; color: #666; font-weight: 400; }
-        .trust-item span { font-size: 1.2rem; }
+        .trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem; color: #555; font-weight: 500; }
 
         /* --- GENERAL SECTIONS --- */
         section { padding: 5rem 5%; }
@@ -53,19 +54,29 @@
         .about-content { max-width: 900px; margin: 0 auto; text-align: center; }
         .about p { font-size: 1.15rem; color: #444; margin-bottom: 2rem; line-height: 1.8; font-weight: 300; }
         .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
-        .about-card { padding: 2rem; background: #fafafa; border-radius: 4px; text-align: left; border-left: 3px solid #c47f7f; }
+        .about-card { padding: 2rem; background: #fdfbfb; border-radius: 4px; text-align: left; border-left: 3px solid #c47f7f; transition: transform 0.3s; }
+        .about-card:hover { transform: translateY(-3px); }
         .about-card h3 { font-size: 1.2rem; margin-bottom: 0.8rem; color: #1a1a1a; font-weight: 600; }
         .about-card p { font-size: 0.95rem; color: #666; margin-bottom: 0; line-height: 1.6; }
 
-        /* --- PROCEDURES SECTION --- */
-        .procedures { background: #fdfbfb; }
-        .procedures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .procedure-card { background: #fff; padding: 2rem; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s; border: 1px solid rgba(0,0,0,0.03); }
-        .procedure-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
-        .procedure-card h3 { font-size: 1.2rem; margin-bottom: 0.8rem; color: #1a1a1a; }
-        .procedure-card p { font-size: 0.95rem; color: #666; margin-bottom: 1.5rem; font-weight: 300; }
-        .procedure-link { color: #c47f7f; text-decoration: none; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; }
-        .procedure-link:hover { text-decoration: underline; }
+        /* --- 8 PROCEDURES SECTION WITH ICONS --- */
+        .procedures { background: #fafafa; }
+        .procedures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+        .procedure-card { 
+            background: #fff; 
+            padding: 2.5rem 2rem; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
+            transition: all 0.3s ease; 
+            border: 1px solid rgba(0,0,0,0.03); 
+            text-align: center;
+        }
+        .procedure-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(196, 127, 127, 0.1); border-color: rgba(196, 127, 127, 0.2); }
+        .procedure-icon { font-size: 2.5rem; margin-bottom: 1.2rem; display: block; }
+        .procedure-card h3 { font-size: 1.25rem; margin-bottom: 0.8rem; color: #1a1a1a; font-weight: 600; }
+        .procedure-card p { font-size: 0.95rem; color: #666; margin-bottom: 1.5rem; font-weight: 300; line-height: 1.6; }
+        .procedure-link { color: #c47f7f; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.3s; }
+        .procedure-link:hover { color: #a85a5a; text-decoration: underline; }
 
         /* --- WHY CHOOSE DERMAP --- */
         .why-us { background: #fff; }
@@ -75,13 +86,17 @@
         .why-item h3 { font-size: 1.1rem; margin-bottom: 0.8rem; color: #1a1a1a; font-weight: 600; letter-spacing: 0.5px; }
         .why-item p { font-size: 0.95rem; color: #666; font-weight: 300; line-height: 1.6; }
 
-        /* --- TOP CLINICS --- */
-        .clinics { background: #fafafa; }
+        /* --- TOP CLINICS WITH REAL IMAGES --- */
+        .clinics { background: #fdfbfb; }
         .clinics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .clinic-card { background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s; }
-        .clinic-card:hover { transform: translateY(-5px); }
-        /* IMAGE TIP: Use images of elegant clinic interiors or diverse, non-Asian medical professionals with healthy skin. */
-        .clinic-image { height: 200px; background-color: #eee; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.9rem; }
+        .clinic-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s; }
+        .clinic-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+        .clinic-image { 
+            height: 220px; 
+            width: 100%; 
+            object-fit: cover; 
+            display: block;
+        }
         .clinic-content { padding: 1.5rem; }
         .clinic-rating { color: #c47f7f; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; }
         .clinic-content h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #1a1a1a; }
@@ -94,7 +109,7 @@
         /* --- TESTIMONIALS --- */
         .testimonials { background: #fff; }
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .testimonial-card { padding: 2rem; background: #fdfbfb; border-radius: 4px; border: 1px solid rgba(0,0,0,0.03); }
+        .testimonial-card { padding: 2rem; background: #fdfbfb; border-radius: 8px; border: 1px solid rgba(0,0,0,0.03); }
         .stars { color: #c47f7f; margin-bottom: 1rem; font-size: 1.1rem; }
         .testimonial-text { font-size: 1rem; color: #444; font-style: italic; margin-bottom: 1.5rem; line-height: 1.7; font-weight: 300; }
         .testimonial-author { font-weight: 600; color: #1a1a1a; font-size: 0.95rem; }
@@ -116,7 +131,7 @@
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
-            .nav-links { display: none; } /* Consider adding a mobile hamburger menu later */
+            .nav-links { display: none; } 
             .trust-bar { flex-direction: column; gap: 1rem; align-items: center; }
         }
     </style>
@@ -141,12 +156,11 @@
         <p>DerMap connects you with top-rated, board-certified aesthetic professionals. Compare transparent pricing, read authentic client reviews, and seamlessly book your next treatment for radiant, healthy skin.</p>
         <a href="#clinics" class="cta-button">Find a Clinic Near You</a>
         
-        <!-- TRUST SIGNALS: Immediately builds credibility for new visitors -->
         <div class="trust-bar">
-            <div class="trust-item"><span>🏥</span> 500+ Verified Clinics</div>
-            <div class="trust-item"><span>⭐</span> 4.9/5 Average Rating</div>
-            <div class="trust-item"><span>🔒</span> 100% Transparent Pricing</div>
-            <div class="trust-item"><span>👥</span> 10,000+ Happy Clients</div>
+            <div class="trust-item">🏥 500+ Verified Clinics</div>
+            <div class="trust-item">⭐ 4.9/5 Average Rating</div>
+            <div class="trust-item">🔒 100% Transparent Pricing</div>
+            <div class="trust-item">👥 10,000+ Happy Clients</div>
         </div>
     </header>
 
@@ -154,7 +168,7 @@
     <section id="about" class="about">
         <div class="about-content">
             <h2 class="section-title">Elevating Your <strong>Skin Health Journey</strong></h2>
-            <p>Choosing the right aesthetic provider is a deeply personal decision. DerMap eliminates the guesswork by bringing together verified clinic credentials, transparent pricing, and authentic client experiences in one sophisticated platform. We believe everyone deserves safe, effective, and confident beauty care.</p>
+            <p>Choosing the right aesthetic provider is a deeply personal decision. DerMap eliminates the guesswork by bringing together verified clinic credentials, transparent pricing, and authentic client experiences in one sophisticated platform.</p>
             
             <div class="about-grid">
                 <div class="about-card">
@@ -169,40 +183,58 @@
         </div>
     </section>
 
-    <!-- PROCEDURES SECTION -->
+    <!-- 8 PROCEDURES SECTION WITH ICONS & ENGAGING TEXT -->
     <section id="procedures" class="procedures">
         <h2 class="section-title">Explore Premium <strong>Treatments</strong></h2>
-        <p class="section-subtitle">Discover the most sought-after cosmetic procedures. Understand the benefits, recovery, and expected results before you book.</p>
+        <p class="section-subtitle">Discover the most sought-after cosmetic procedures. Understand the benefits and expected results before you book.</p>
         
         <div class="procedures-grid">
             <div class="procedure-card">
-                <h3>Hydrafacial</h3>
-                <p>Deep cleansing, exfoliation, and intense hydration for a healthy, effortlessly glowing complexion.</p>
+                <span class="procedure-icon">💧</span>
+                <h3>HydraFacial</h3>
+                <p><strong>The Ultimate Glow:</strong> Deep cleansing, exfoliation, and intense hydration for a flawless, effortlessly radiant complexion.</p>
                 <a href="#" class="procedure-link">Learn More →</a>
             </div>
             <div class="procedure-card">
+                <span class="procedure-icon">✨</span>
                 <h3>Microneedling</h3>
-                <p>Stimulates natural collagen production to reduce scars, soften fine lines, and improve skin texture.</p>
+                <p><strong>Collagen Rebirth:</strong> Stimulates your skin’s natural healing to soften fine lines, fade scars, and restore youthful texture.</p>
                 <a href="#" class="procedure-link">Learn More →</a>
             </div>
             <div class="procedure-card">
+                <span class="procedure-icon">🌸</span>
                 <h3>Botox & Injectables</h3>
-                <p>Smooth dynamic wrinkles and restore facial volume with natural-looking, expert-administered results.</p>
+                <p><strong>Effortless Smoothness:</strong> Expertly administered treatments to relax dynamic wrinkles while preserving your natural, expressive beauty.</p>
                 <a href="#" class="procedure-link">Learn More →</a>
             </div>
             <div class="procedure-card">
+                <span class="procedure-icon">🔬</span>
                 <h3>Laser Resurfacing</h3>
-                <p>Advanced technology to improve skin tone, reduce sun damage, and promote cellular renewal.</p>
+                <p><strong>Precision Renewal:</strong> Advanced light therapy to erase sun damage, even out skin tone, and trigger deep cellular regeneration.</p>
                 <a href="#" class="procedure-link">Learn More →</a>
             </div>
             <div class="procedure-card">
-                <h3>Chemical Peels</h3>
-                <p>Professional-grade exfoliation to renew the skin, improve clarity, and reduce surface imperfections.</p>
+                <span class="procedure-icon">🍋</span>
+                <h3>Medical-Grade Peels</h3>
+                <p><strong>The Fresh Start:</strong> Professional exfoliation that sweeps away dullness, revealing clearer, brighter, and smoother skin beneath.</p>
                 <a href="#" class="procedure-link">Learn More →</a>
             </div>
             <div class="procedure-card">
+                <span class="procedure-icon">🩸</span>
                 <h3>PRP Therapy</h3>
-                <p>Harness your body's own plasma to promote deep healing, hair restoration, and natural rejuvenation.</p>
+                <p><strong>Nature’s Healer:</strong> Harnesses your body’s own growth factors to promote deep tissue repair, hair restoration, and natural rejuvenation.</p>
+                <a href="#" class="procedure-link">Learn More →</a>
+            </div>
+            <div class="procedure-card">
+                <span class="procedure-icon">💎</span>
+                <h3>Dermal Fillers</h3>
+                <p><strong>Sculpted Harmony:</strong> Restores lost volume and enhances facial contours with natural-looking, hyaluronic acid-based precision.</p>
+                <a href="#" class="procedure-link">Learn More →</a>
+            </div>
+            <div class="procedure-card">
+                <span class="procedure-icon">🌟</span>
+                <h3>LED Light Therapy</h3>
+                <p><strong>Cellular Energy:</strong> Non-invasive light wavelengths that calm inflammation, fight acne bacteria, and boost collagen production from within.</p>
                 <a href="#" class="procedure-link">Learn More →</a>
             </div>
         </div>
@@ -234,20 +266,10 @@
                 <h3>Price Transparency</h3>
                 <p>View estimated treatment ranges side-by-side to find the best value for your investment.</p>
             </div>
-            <div class="why-item">
-                <span class="why-icon">📅</span>
-                <h3>Seamless Booking</h3>
-                <p>Secure your appointment in seconds directly through our platform. No phone calls needed.</p>
-            </div>
-            <div class="why-item">
-                <span class="why-icon">❤️</span>
-                <h3>Community Driven</h3>
-                <p>Share experiences and help others find trusted specialists in a supportive environment.</p>
-            </div>
         </div>
     </section>
 
-    <!-- TOP CLINICS SECTION -->
+    <!-- TOP CLINICS SECTION WITH REAL IMAGES -->
     <section id="clinics" class="clinics">
         <h2 class="section-title">Top-Rated <strong>Clinics Near You</strong></h2>
         <p class="section-subtitle">Trusted professionals with verified reviews and proven results.</p>
@@ -255,8 +277,7 @@
         <div class="clinics-grid">
             <!-- Clinic 1 -->
             <div class="clinic-card">
-                <!-- IMAGE TIP: Insert an elegant photo of a modern clinic interior or a professional, non-Asian dermatologist with healthy skin. -->
-                <div class="clinic-image">[ Clinic Image Placeholder ]</div>
+                <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Elegant modern aesthetic clinic interior" class="clinic-image">
                 <div class="clinic-content">
                     <div class="clinic-rating">⭐ 4.9 (128 Reviews)</div>
                     <h3>Lumina Aesthetics</h3>
@@ -273,7 +294,7 @@
 
             <!-- Clinic 2 -->
             <div class="clinic-card">
-                <div class="clinic-image">[ Clinic Image Placeholder ]</div>
+                <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80" alt="Professional aesthetician providing skincare treatment" class="clinic-image">
                 <div class="clinic-content">
                     <div class="clinic-rating">⭐ 4.8 (96 Reviews)</div>
                     <h3>Velvet Skin Studio</h3>
@@ -290,7 +311,7 @@
 
             <!-- Clinic 3 -->
             <div class="clinic-card">
-                <div class="clinic-image">[ Clinic Image Placeholder ]</div>
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80" alt="Professional dermatologist in modern clinic" class="clinic-image">
                 <div class="clinic-content">
                     <div class="clinic-rating">⭐ 4.7 (215 Reviews)</div>
                     <h3>Nova Cosmetic Center</h3>
@@ -317,20 +338,20 @@
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"DerMap made it effortless to compare clinics and pricing. I booked my Hydrafacial through the platform, and the experience was absolutely flawless. Highly recommend!"</p>
+                <p class="testimonial-text">"DerMap made it effortless to compare clinics and pricing. I booked my Hydrafacial through the platform, and the experience was absolutely flawless."</p>
                 <div class="testimonial-author">Sarah Johnson</div>
                 <span class="testimonial-badge">Verified Client • Hydrafacial</span>
             </div>
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
                 <p class="testimonial-text">"I was nervous about getting Botox for the first time. The detailed procedure guides and real reviews on DerMap gave me the confidence to choose the right specialist."</p>
-                <div class="testimonial-author">Michael Chen</div>
+                <div class="testimonial-author">Michael Davis</div>
                 <span class="testimonial-badge">Verified Client • Botox</span>
             </div>
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"The best beauty marketplace I've used. Clean interface, trustworthy clinic profiles, and the booking process is incredibly smooth. The price transparency is a game-changer."</p>
-                <div class="testimonial-author">Emma Davis</div>
+                <p class="testimonial-text">"The best beauty marketplace I've used. Clean interface, trustworthy clinic profiles, and the booking process is incredibly smooth. A total game-changer."</p>
+                <div class="testimonial-author">Emma Wilson</div>
                 <span class="testimonial-badge">Verified Client • Laser Resurfacing</span>
             </div>
         </div>
