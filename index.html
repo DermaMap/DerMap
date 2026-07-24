@@ -226,49 +226,113 @@
         .view-all-container { text-align: center; margin-top: 2rem; }
 
         /* --- REAL RESULTS SECTION --- */
-        .results-section { background: #fff; padding: 6rem 5%; }
-        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .result-card { 
-            background: white; 
-            border-radius: 0;
-            overflow: hidden; 
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            border: 1px solid #f0f0f0;
-            transition: all 0.3s ease; 
-        }
-        .result-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .result-image-container { position: relative; height: 280px; overflow: hidden; }
-        .result-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .result-card:hover .result-image-container img { transform: scale(1.06); }
-        .result-badge { 
-            position: absolute; 
-            top: 15px; 
-            right: 15px; 
-            background: #000; 
-            color: #fff;
-            padding: 6px 14px; 
-            border-radius: 0;
-            font-size: 0.7rem; 
-            font-weight: 500; 
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-        .result-content { padding: 1.8rem; }
-        .result-meta { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .result-procedure { color: #e57373; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-        .result-sessions { color: #888; font-size: 0.8rem; font-weight: 400; }
-        .result-card h3 { color: #000; font-size: 1.25rem; margin-bottom: 0.8rem; font-weight: 500; }
-        .result-description { color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; font-weight: 300; }
-        .result-clinic { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #f0f0f0; font-size: 0.85rem; }
-        .clinic-name { color: #000; font-weight: 500; }
-        .clinic-location { color: #888; font-weight: 400; }
+.results-section { background: #fff; padding: 6rem 5%; }
+.results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+.result-card { 
+    background: white; 
+    border-radius: 0;
+    overflow: hidden; 
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease; 
+}
+.result-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+/* Before/After Image Split */
+.result-image-split { 
+    display: flex; 
+    position: relative; 
+    height: 280px; 
+    overflow: hidden; 
+}
+.result-half { 
+    flex: 1; 
+    position: relative; 
+    overflow: hidden; 
+}
+.result-half img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s; 
+}
+.result-card:hover .result-half img { transform: scale(1.06); }
+
+/* Before image slightly desaturated for contrast */
+.result-half.before img { 
+    filter: saturate(0.6) brightness(0.95); 
+}
+.result-half.after img { 
+    filter: saturate(1.1) brightness(1.02); 
+}
+
+/* Center divider line */
+.result-divider { 
+    position: absolute; 
+    top: 0; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 2px; 
+    height: 100%; 
+    background: #fff; 
+    z-index: 3; 
+}
+
+/* Before / After Labels */
+.result-label { 
+    position: absolute; 
+    bottom: 12px; 
+    z-index: 2;
+    padding: 4px 12px; 
+    font-size: 0.65rem; 
+    font-weight: 600; 
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.result-label.before-label { 
+    left: 10px; 
+    background: rgba(0, 0, 0, 0.75); 
+    color: #fff; 
+}
+.result-label.after-label { 
+    right: 10px; 
+    background: #e57373; 
+    color: #fff; 
+}
+
+/* Verified Badge */
+.result-badge { 
+    position: absolute; 
+    top: 12px; 
+    right: 12px; 
+    background: #000; 
+    color: #fff;
+    padding: 5px 12px; 
+    border-radius: 0;
+    font-size: 0.65rem; 
+    font-weight: 500; 
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    z-index: 4;
+}
+
+/* Result Content */
+.result-content { padding: 1.8rem; }
+.result-meta { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+.result-procedure { color: #e57373; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.result-sessions { color: #888; font-size: 0.8rem; font-weight: 400; }
+.result-card h3 { color: #000; font-size: 1.2rem; margin-bottom: 0.8rem; font-weight: 500; }
+.result-description { color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; font-weight: 300; }
+.result-clinic { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #f0f0f0; font-size: 0.85rem; }
+.clinic-name { color: #000; font-weight: 500; }
+.clinic-location { color: #888; font-weight: 400; }
 
         /* --- REVIEWS SECTION --- */
         .reviews-section { background: #f8f9fa; }
@@ -526,98 +590,131 @@
         </div>
     </section>
 
-    <!-- REAL RESULTS SECTION (Ավելացված) -->
-    <section id="results" class="results-section">
-        <h2 class="section-title">Real <strong>Results</strong></h2>
-        <p class="section-subtitle">Authentic transformations from our verified clients and trusted clinics.</p>
-        
-        <div class="results-grid">
-            <!-- Result 1 -->
-            <div class="result-card">
-                <div class="result-image-container">
-                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Hydrafacial result - glowing skin">
-                    <span class="result-badge">Verified Result</span>
-                </div>
-                <div class="result-content">
-                    <div class="result-meta">
-                        <span class="result-procedure">Hydrafacial</span>
-                        <span class="result-sessions">1 Session</span>
-                    </div>
-                    <h3>Radiant Glow Restoration</h3>
-                    <p class="result-description">Visible improvement in skin clarity, hydration, and overall luminosity after a single treatment.</p>
-                    <div class="result-clinic">
-                        <span class="clinic-name">Lumina Aesthetics</span>
-                        <span class="clinic-location">📍 Downtown</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Result 2 -->
-            <div class="result-card">
-                <div class="result-image-container">
-                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Microneedling result - smooth texture">
-                    <span class="result-badge">Verified Result</span>
-                </div>
-                <div class="result-content">
-                    <div class="result-meta">
-                        <span class="result-procedure">Microneedling</span>
-                        <span class="result-sessions">3 Sessions</span>
-                    </div>
-                    <h3>Texture Refinement</h3>
-                    <p class="result-description">Significant reduction in fine lines and acne scars with improved skin texture and firmness.</p>
-                    <div class="result-clinic">
-                        <span class="clinic-name">Velvet Skin Studio</span>
-                        <span class="clinic-location">📍 Westside</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Result 3 -->
-            <div class="result-card">
-                <div class="result-image-container">
-                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Chemical peel result - even tone">
-                    <span class="result-badge">Verified Result</span>
-                </div>
-                <div class="result-content">
-                    <div class="result-meta">
-                        <span class="result-procedure">Chemical Peel</span>
-                        <span class="result-sessions">2 Sessions</span>
-                    </div>
-                    <h3>Even Tone Perfection</h3>
-                    <p class="result-description">Diminished hyperpigmentation and sun damage with a brighter, more uniform complexion.</p>
-                    <div class="result-clinic">
-                        <span class="clinic-name">Nova Cosmetic Center</span>
-                        <span class="clinic-location">📍 North Park</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Result 4 -->
-            <div class="result-card">
-                <div class="result-image-container">
-                    <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=600&q=80" alt="Botox result - natural smoothness">
-                    <span class="result-badge">Verified Result</span>
-                </div>
-                <div class="result-content">
-                    <div class="result-meta">
-                        <span class="result-procedure">Botox</span>
-                        <span class="result-sessions">1 Session</span>
-                    </div>
-                    <h3>Natural Smoothness</h3>
-                    <p class="result-description">Softened dynamic wrinkles while preserving natural facial expressions and movement.</p>
-                    <div class="result-clinic">
-                        <span class="clinic-name">Lumina Aesthetics</span>
-                        <span class="clinic-location">📍 Downtown</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="view-all-container" style="margin-top: 3rem;">
-            <a href="#" class="cta-button">See More Real Results</a>
-        </div>
-    </section>
+   <!-- REAL RESULTS SECTION -->
+<section id="results" class="results-section">
+    <h2 class="section-title">Real <strong>Results</strong></h2>
+    <p class="section-subtitle">Authentic before and after transformations from our verified clients.</p>
     
+    <div class="results-grid">
+
+        <!-- Result 1: Hydrafacial -->
+        <div class="result-card">
+            <div class="result-image-split">
+                <div class="result-half before">
+                    <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=400&q=80" alt="Before Hydrafacial">
+                    <span class="result-label before-label">Before</span>
+                </div>
+                <div class="result-divider"></div>
+                <div class="result-half after">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=400&q=80" alt="After Hydrafacial">
+                    <span class="result-label after-label">After</span>
+                </div>
+                <span class="result-badge">Verified</span>
+            </div>
+            <div class="result-content">
+                <div class="result-meta">
+                    <span class="result-procedure">Hydrafacial</span>
+                    <span class="result-sessions">1 Session</span>
+                </div>
+                <h3>Radiant Glow Restoration</h3>
+                <p class="result-description">Visible improvement in skin clarity, hydration, and overall luminosity after a single treatment.</p>
+                <div class="result-clinic">
+                    <span class="clinic-name">Lumina Aesthetics</span>
+                    <span class="clinic-location">📍 Downtown</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result 2: Microneedling -->
+        <div class="result-card">
+            <div class="result-image-split">
+                <div class="result-half before">
+                    <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=400&q=80" alt="Before Microneedling">
+                    <span class="result-label before-label">Before</span>
+                </div>
+                <div class="result-divider"></div>
+                <div class="result-half after">
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=400&q=80" alt="After Microneedling">
+                    <span class="result-label after-label">After</span>
+                </div>
+                <span class="result-badge">Verified</span>
+            </div>
+            <div class="result-content">
+                <div class="result-meta">
+                    <span class="result-procedure">Microneedling</span>
+                    <span class="result-sessions">3 Sessions</span>
+                </div>
+                <h3>Texture Refinement</h3>
+                <p class="result-description">Significant reduction in fine lines and acne scars with improved skin texture and firmness.</p>
+                <div class="result-clinic">
+                    <span class="clinic-name">Velvet Skin Studio</span>
+                    <span class="clinic-location">📍 Westside</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result 3: Chemical Peel -->
+        <div class="result-card">
+            <div class="result-image-split">
+                <div class="result-half before">
+                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80" alt="Before Chemical Peel">
+                    <span class="result-label before-label">Before</span>
+                </div>
+                <div class="result-divider"></div>
+                <div class="result-half after">
+                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=400&q=80" alt="After Chemical Peel">
+                    <span class="result-label after-label">After</span>
+                </div>
+                <span class="result-badge">Verified</span>
+            </div>
+            <div class="result-content">
+                <div class="result-meta">
+                    <span class="result-procedure">Chemical Peel</span>
+                    <span class="result-sessions">2 Sessions</span>
+                </div>
+                <h3>Even Tone Perfection</h3>
+                <p class="result-description">Diminished hyperpigmentation and sun damage with a brighter, more uniform complexion.</p>
+                <div class="result-clinic">
+                    <span class="clinic-name">Nova Cosmetic Center</span>
+                    <span class="clinic-location">📍 North Park</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result 4: Botox -->
+        <div class="result-card">
+            <div class="result-image-split">
+                <div class="result-half before">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80" alt="Before Botox">
+                    <span class="result-label before-label">Before</span>
+                </div>
+                <div class="result-divider"></div>
+                <div class="result-half after">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80" alt="After Botox">
+                    <span class="result-label after-label">After</span>
+                </div>
+                <span class="result-badge">Verified</span>
+            </div>
+            <div class="result-content">
+                <div class="result-meta">
+                    <span class="result-procedure">Botox</span>
+                    <span class="result-sessions">1 Session</span>
+                </div>
+                <h3>Natural Smoothness</h3>
+                <p class="result-description">Softened dynamic wrinkles while preserving natural facial expressions and movement.</p>
+                <div class="result-clinic">
+                    <span class="clinic-name">Lumina Aesthetics</span>
+                    <span class="clinic-location">📍 Downtown</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="view-all-container" style="margin-top: 3rem;">
+        <a href="#" class="cta-button">See More Real Results</a>
+    </div>
+</section>
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <h2>Ready to Discover Better Beauty Care?</h2>
