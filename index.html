@@ -21,11 +21,19 @@
         .nav-links a { text-decoration: none; color: #2c3e50; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #e57373; }
 
-        /* --- HERO SECTION --- */
-        .hero { padding: 5rem 5%; background: linear-gradient(135deg, #fff5f5 0%, #fff 100%); text-align: center; }
+        /* --- HERO SECTION (Updated with elegant background image) --- */
+        .hero { 
+            padding: 6rem 5%; 
+            /* Elegant background image with soft pink/white gradient overlay for perfect text readability */
+            background: linear-gradient(135deg, rgba(255, 245, 245, 0.92) 0%, rgba(255, 255, 255, 0.88) 100%), 
+                        url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center; 
+        }
         .hero-badge { display: inline-block; padding: 0.5rem 1.5rem; background: #e57373; color: white; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; }
         .hero h1 { font-size: 3.5rem; color: #2c3e50; margin-bottom: 1rem; line-height: 1.2; }
-        .hero p { font-size: 1.3rem; color: #666; max-width: 700px; margin: 0 auto 2rem; }
+        .hero p { font-size: 1.3rem; color: #555; max-width: 700px; margin: 0 auto 2rem; }
         .cta-button { display: inline-block; padding: 1rem 2.5rem; background: #e57373; color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s; box-shadow: 0 4px 15px rgba(229, 115, 115, 0.3); }
         .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(229, 115, 115, 0.4); }
         .hero-features { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 3rem; }
@@ -50,7 +58,7 @@
         .procedures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .procedure-card { background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: transform 0.3s, box-shadow 0.3s; text-align: left; display: flex; flex-direction: column; overflow: hidden; }
         .procedure-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .card-image-container { width: 100%; height: 200px; overflow: hidden; }
+        .card-image-container { width: 100%; height: 200px; overflow: hidden; background-color: #f0f0f0; }
         .card-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .procedure-card:hover .card-image-container img { transform: scale(1.05); }
         .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
@@ -97,18 +105,18 @@
         footer p { opacity: 0.9; }
 
         /* --- REVIEWS SECTION --- */
-.reviews-section { background: #f8f9fa; }
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-.review-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
-.review-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(229, 115, 115, 0.15); }
-.review-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-.review-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #fff5f5; }
-.review-info h4 { color: #2c3e50; font-size: 1.1rem; margin-bottom: 0.2rem; }
-.review-info span { color: #666; font-size: 0.9rem; }
-.review-stars { color: #f59e0b; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px; }
-.review-comment { color: #555; font-size: 1rem; line-height: 1.7; font-style: italic; flex-grow: 1; }
-.review-comment::before { content: "“"; color: #e57373; font-size: 1.5rem; font-weight: bold; margin-right: 5px; }
-.review-comment::after { content: "”"; color: #e57373; font-size: 1.5rem; font-weight: bold; margin-left: 5px; }
+        .reviews-section { background: #f8f9fa; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .review-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
+        .review-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(229, 115, 115, 0.15); }
+        .review-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .review-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #fff5f5; }
+        .review-info h4 { color: #2c3e50; font-size: 1.1rem; margin-bottom: 0.2rem; }
+        .review-info span { color: #666; font-size: 0.9rem; }
+        .review-stars { color: #f59e0b; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+        .review-comment { color: #555; font-size: 1rem; line-height: 1.7; font-style: italic; flex-grow: 1; }
+        .review-comment::before { content: "“"; color: #e57373; font-size: 1.5rem; font-weight: bold; margin-right: 5px; }
+        .review-comment::after { content: "”"; color: #e57373; font-size: 1.5rem; font-weight: bold; margin-left: 5px; }
         
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
@@ -168,7 +176,7 @@
         </div>
     </section>
 
-    <!-- Procedures Section -->
+    <!-- Procedures Section (Your local images are preserved here) -->
     <section id="procedures" class="procedures">
         <h2 class="section-title">Explore Popular Procedures</h2>
         <p class="section-subtitle">Learn about the most in-demand cosmetic treatments, how they work, benefits, recovery and what to expect.</p>
@@ -259,16 +267,14 @@
                 </div>
             </div>
 
-            <!-- Clinic 3 (Updated Photo & Emoji) -->
+            <!-- Clinic 3 -->
             <div class="clinic-card">
                 <div class="clinic-image-container">
-                    <!-- Changed to a bright, modern aesthetic clinic interior -->
                     <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="Nova Cosmetic Center">
                     <span class="rating-badge">⭐ 4.7 (215)</span>
                 </div>
                 <div class="card-content">
                     <h3>Nova Cosmetic Center</h3>
-                    <!-- Added missing 📍 emoji -->
                     <p class="location">📍 North Park Plaza</p>
                     <p class="description">High-volume center offering competitive pricing on microneedling, body contouring, and injectables.</p>
                     <div class="clinic-tags"><span class="tag">Microneedling</span><span class="tag">Body Contour</span></div>
@@ -283,51 +289,51 @@
     </section>
 
     <!-- Reviews Section -->
-<section id="reviews" class="reviews-section">
-    <h2 class="section-title">What Our Users Say</h2>
-    <p class="section-subtitle">Real experiences from people who found their perfect clinic through DerMap.</p>
-    
-    <div class="reviews-grid">
-        <!-- Review 1 -->
-        <div class="review-card">
-            <div class="review-header">
-                <img src="https://i.pravatar.cc/150?img=5" alt="Sarah Johnson" class="review-avatar">
-                <div class="review-info">
-                    <h4>Sarah Johnson</h4>
-                    <span>Verified Client</span>
+    <section id="reviews" class="reviews-section">
+        <h2 class="section-title">What Our Users Say</h2>
+        <p class="section-subtitle">Real experiences from people who found their perfect clinic through DerMap.</p>
+        
+        <div class="reviews-grid">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="Sarah Johnson" class="review-avatar">
+                    <div class="review-info">
+                        <h4>Sarah Johnson</h4>
+                        <span>Verified Client</span>
+                    </div>
                 </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-comment">DerMap made it so easy to compare clinics and prices. I booked my Hydrafacial through the platform and the experience was flawless. Highly recommend!</p>
             </div>
-            <div class="review-stars">★★★★★</div>
-            <p class="review-comment">DerMap made it so easy to compare clinics and prices. I booked my Hydrafacial through the platform and the experience was flawless. Highly recommend!</p>
-        </div>
 
-        <!-- Review 2 -->
-        <div class="review-card">
-            <div class="review-header">
-                <img src="https://i.pravatar.cc/150?img=11" alt="Michael Chen" class="review-avatar">
-                <div class="review-info">
-                    <h4>Michael Chen</h4>
-                    <span>Verified Client</span>
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://i.pravatar.cc/150?img=11" alt="Michael Chen" class="review-avatar">
+                    <div class="review-info">
+                        <h4>Michael Chen</h4>
+                        <span>Verified Client</span>
+                    </div>
                 </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-comment">I was nervous about getting Botox for the first time, but the procedure guides and real reviews on DerMap gave me the confidence to choose the right specialist.</p>
             </div>
-            <div class="review-stars">★★★★★</div>
-            <p class="review-comment">I was nervous about getting Botox for the first time, but the procedure guides and real reviews on DerMap gave me the confidence to choose the right specialist.</p>
-        </div>
 
-        <!-- Review 3 -->
-        <div class="review-card">
-            <div class="review-header">
-                <img src="https://i.pravatar.cc/150?img=9" alt="Emma Davis" class="review-avatar">
-                <div class="review-info">
-                    <h4>Emma Davis</h4>
-                    <span>Verified Client</span>
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://i.pravatar.cc/150?img=9" alt="Emma Davis" class="review-avatar">
+                    <div class="review-info">
+                        <h4>Emma Davis</h4>
+                        <span>Verified Client</span>
+                    </div>
                 </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-comment">The best beauty marketplace I've used. Clean interface, trustworthy clinic profiles, and the booking process is incredibly smooth. Love the price comparison feature!</p>
             </div>
-            <div class="review-stars">★★★★★</div>
-            <p class="review-comment">The best beauty marketplace I've used. Clean interface, trustworthy clinic profiles, and the booking process is incredibly smooth. Love the price comparison feature!</p>
         </div>
-    </div>
-</section>
+    </section>
     
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
