@@ -179,7 +179,6 @@
         .clinic-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .clinic-image-container { position: relative; height: 240px; overflow: hidden; }
         .clinic-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .clinic-card:hover .clinic-image-container img { transform: scale(1.06); }
         .rating-badge { 
             position: absolute; 
             bottom: 15px; 
@@ -526,7 +525,7 @@
         </div>
     </section>
 
-    <!-- REAL RESULTS SECTION (Ավելացված) -->
+    <!-- REAL RESULTS SECTION -->
     <section id="results" class="results-section">
         <h2 class="section-title">Real <strong>Results</strong></h2>
         <p class="section-subtitle">Authentic transformations from our verified clients and trusted clinics.</p>
@@ -629,6 +628,23 @@
     <footer>
         <p>&copy; 2026 DerMap. All Rights Reserved.</p>
     </footer>
+
+    <!-- ========================================== -->
+    <!-- DERMAP CONSULTATION CHAT WIDGET (Crisp)    -->
+    <!-- ========================================== -->
+    <script type="text/javascript">
+      window.$crisp=[];
+      // ⚠️ IMPORTANT: Replace "YOUR_WEBSITE_ID_HERE" with your actual Crisp Website ID 
+      // (You get this after signing up for free at https://crisp.chat)
+      window.CRISP_WEBSITE_ID="YOUR_WEBSITE_ID_HERE";
+      (function(){
+        var d=document;
+        var s=d.createElement("script");
+        s.src="https://client.crisp.chat/l.js";
+        s.async=1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      })();
+    </script>
 
 </body>
 </html>
