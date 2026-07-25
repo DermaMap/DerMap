@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DerMap | Discover Trusted Beauty Clinics</title>
-    
-    <!-- Snipcart CSS -->
-    <link rel="preconnect" href="https://app.snipcart.com">
-    <link rel="preconnect" href="https://cdn.snipcart.com">
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css" />
-    
     <style>
         /* --- GLOBAL STYLES --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,24 +16,9 @@
         .logo-der { color: #e57373; }
         .logo-map { color: #000000; }
         
-        .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; }
         .nav-links a { text-decoration: none; color: #2c3e50; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #e57373; }
-
-        .cart-btn { 
-            background: transparent; 
-            border: 1px solid #000; 
-            padding: 0.5rem 1.2rem; 
-            cursor: pointer; 
-            font-weight: 500; 
-            letter-spacing: 1.5px; 
-            text-transform: uppercase; 
-            font-size: 0.8rem; 
-            color: #000; 
-            transition: all 0.3s; 
-            font-family: inherit;
-        }
-        .cart-btn:hover { background: #000; color: #fff; }
 
         /* --- HERO SECTION --- */
         .hero { 
@@ -93,14 +72,13 @@
             text-transform: uppercase;
             transition: all 0.3s;
             border: 1px solid #000;
+            cursor: pointer;
         }
         .cta-button:hover { 
             background: #e57373;
             border-color: #e57373;
             transform: translateY(-2px);
         }
-        .hero-features { display: flex; justify-content: center; flex-wrap: wrap; gap: 2.5rem; margin-top: 4rem; }
-        .hero-feature { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: #666; font-weight: 400; letter-spacing: 0.5px; }
 
         /* --- GENERAL SECTIONS --- */
         section { padding: 5rem 5%; }
@@ -122,7 +100,139 @@
             font-weight: 300;
         }
 
-        /* --- ABOUT SECTION --- */
+        /* --- FEATURES SECTION --- */
+        .features { background: #fff; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .feature-card { 
+            background: #fafafa; 
+            padding: 2.5rem; 
+            border-radius: 0;
+            transition: transform 0.3s;
+            border: 1px solid #f0f0f0;
+            cursor: pointer;
+        }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-card.clickable:hover { 
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #e57373;
+        }
+        .feature-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
+        .feature-card h3 { color: #000; font-size: 1.25rem; margin-bottom: 0.8rem; font-weight: 500; }
+        .feature-card p { color: #666; line-height: 1.7; font-weight: 300; font-size: 0.95rem; }
+        .book-now-hint { 
+            display: inline-block;
+            margin-top: 1rem;
+            color: #e57373;
+            font-weight: 500;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .feature-card.clickable:hover .book-now-hint {
+            opacity: 1;
+        }
+
+        /* --- MODAL STYLES --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            background: #fff;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            border-radius: 0;
+        }
+        .modal-header {
+            background: #000;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-header h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+        }
+        .modal-close {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s;
+        }
+        .modal-close:hover {
+            color: #e57373;
+        }
+        .modal-body {
+            padding: 2rem;
+        }
+        .booking-options {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .booking-option {
+            border: 1px solid #f0f0f0;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+        .booking-option:hover {
+            border-color: #e57373;
+            background: #fafafa;
+        }
+        .booking-option h3 {
+            color: #000;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .booking-option p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .booking-option .price {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 1rem;
+        }
+        .calendly-container {
+            margin-top: 2rem;
+            border-top: 2px solid #e57373;
+            padding-top: 2rem;
+        }
+        .calendly-container h3 {
+            margin-bottom: 1rem;
+            color: #000;
+        }
+
+        /* --- OTHER SECTIONS (keeping existing styles) --- */
         .about { background: #fff; }
         .about-content { max-width: 900px; margin: 0 auto; text-align: center; }
         .about p { font-size: 1.15rem; color: #555; margin-bottom: 2rem; line-height: 1.8; font-weight: 300; }
@@ -137,9 +247,8 @@
         .about-card h3 { color: #000; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 500; letter-spacing: -0.3px; }
         .about-card p { color: #666; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0; font-weight: 300; }
 
-        /* --- PROCEDURES SECTION --- */
         .procedures { background: #f8f9fa; }
-        .procedures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .procedures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .procedure-card { 
             background: white; 
             border-radius: 0;
@@ -152,7 +261,6 @@
             overflow: hidden; 
         }
         .procedure-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
-        .procedure-card.featured-booking { border: 2px solid #e57373; }
         .card-image-container { width: 100%; height: 220px; overflow: hidden; background-color: #f5f5f5; }
         .card-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .procedure-card:hover .card-image-container img { transform: scale(1.05); }
@@ -172,22 +280,6 @@
         }
         .learn-more:hover { color: #e57373; border-bottom-color: #e57373; }
 
-        /* --- FEATURES SECTION --- */
-        .features { background: #fff; }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .feature-card { 
-            background: #fafafa; 
-            padding: 2.5rem; 
-            border-radius: 0;
-            transition: transform 0.3s;
-            border: 1px solid #f0f0f0;
-        }
-        .feature-card:hover { transform: translateY(-5px); }
-        .feature-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
-        .feature-card h3 { color: #000; font-size: 1.25rem; margin-bottom: 0.8rem; font-weight: 500; }
-        .feature-card p { color: #666; line-height: 1.7; font-weight: 300; font-size: 0.95rem; }
-
-        /* --- CLINICS SECTION --- */
         .clinics-section { background: #fff; padding-bottom: 6rem; }
         .clinics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto 3rem; }
         .clinic-card { 
@@ -201,6 +293,7 @@
         .clinic-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .clinic-image-container { position: relative; height: 240px; overflow: hidden; }
         .clinic-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .clinic-card:hover .clinic-image-container img { transform: scale(1.06); }
         .rating-badge { 
             position: absolute; 
             bottom: 15px; 
@@ -246,7 +339,6 @@
         .btn-outline:hover { background: #000; color: #fff; }
         .view-all-container { text-align: center; margin-top: 2rem; }
 
-        /* --- REAL RESULTS SECTION --- */
         .results-section { background: #fff; padding: 6rem 5%; }
         .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .result-card { 
@@ -291,7 +383,6 @@
         .clinic-name { color: #000; font-weight: 500; }
         .clinic-location { color: #888; font-weight: 400; }
 
-        /* --- REVIEWS SECTION --- */
         .reviews-section { background: #f8f9fa; }
         .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .review-card { 
@@ -314,7 +405,6 @@
         .review-comment::before { content: "“"; color: #e57373; font-size: 2rem; font-weight: 300; margin-right: 5px; line-height: 0.5; }
         .review-comment::after { content: "”"; color: #e57373; font-size: 2rem; font-weight: 300; margin-left: 5px; line-height: 0.5; }
         
-        /* --- CTA & FOOTER --- */
         .cta-section { background: #000; color: #fff; text-align: center; padding: 6rem 5%; }
         .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 400; letter-spacing: -0.5px; }
         .cta-section p { font-size: 1.15rem; margin-bottom: 2.5rem; opacity: 0.85; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; }
@@ -336,29 +426,6 @@
         footer { background: #0a0a0a; color: #888; text-align: center; padding: 2.5rem 5%; font-size: 0.9rem; }
         footer p { opacity: 0.8; font-weight: 300; }
 
-        /* --- SNIPCART CUSTOM STYLING TO MATCH DERMAP --- */
-        .snipcart-button-primary {
-            background-color: #000 !important;
-            color: #fff !important;
-            border-radius: 0 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 1px !important;
-            font-weight: 500 !important;
-            border: 1px solid #000 !important;
-        }
-        .snipcart-button-primary:hover {
-            background-color: #e57373 !important;
-            border-color: #e57373 !important;
-        }
-        .snipcart__box--badge {
-            background-color: #e57373 !important;
-            border-radius: 0 !important;
-            font-weight: 600 !important;
-        }
-        .snipcart-modal__header {
-            border-bottom: 2px solid #e57373 !important;
-        }
-
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .nav-links { gap: 1.5rem; }
@@ -366,6 +433,7 @@
             .hero p { font-size: 1.05rem; }
             .section-title { font-size: 1.9rem; }
             .cta-button, .cta-button-white { padding: 0.9rem 2rem; font-size: 0.85rem; }
+            .modal-content { margin: 1rem; }
         }
     </style>
 </head>
@@ -378,12 +446,9 @@
             <li><a href="#about">About</a></li>
             <li><a href="#procedures">Procedures</a></li>
             <li><a href="#clinics">Clinics</a></li>
+            <li><a href="#features">Features</a></li>
             <li><a href="#results">Results</a></li>
-            <li>
-                <button class="snipcart-checkout cart-btn">
-                    Cart (<span class="snipcart-items-count">0</span>)
-                </button>
-            </li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -392,7 +457,7 @@
         <div class="hero-badge">Beauty Marketplace</div>
         <h1>Discover the Best<br><strong>Beauty Clinics</strong> Near You</h1>
         <p>DerMap helps you explore cosmetic procedures, compare trusted clinics, read authentic reviews, and book appointments—all in one place.</p>
-        <a href="#procedures" class="cta-button">Explore Procedures</a>
+        <a href="#features" class="cta-button">Book Online</a>
     </section>
 
     <!-- About Section -->
@@ -420,28 +485,6 @@
         <p class="section-subtitle">Learn about the most in-demand cosmetic treatments, how they work, benefits, recovery and what to expect.</p>
         
         <div class="procedures-grid">
-            <!-- FEATURED BOOKING CARD -->
-            <div class="procedure-card featured-booking">
-                <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Skin Consultation">
-                </div>
-                <div class="card-content">
-                    <h3>Initial Skin Consultation</h3>
-                    <p>A 30-minute personalized assessment with a licensed DerMap specialist to build your custom skincare routine.</p>
-                    <p style="font-size: 1.2rem; font-weight: 500; color: #000; margin-bottom: 1.5rem;">$50.00</p>
-                    
-                    <button class="snipcart-add-item cta-button" style="width: 100%; border: none; cursor: pointer; text-align: center;"
-                        data-item-id="consultation-001"
-                        data-item-price="50.00"
-                        data-item-url="/"
-                        data-item-description="30-minute personalized skin assessment"
-                        data-item-image="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80"
-                        data-item-name="Initial Skin Consultation">
-                        Add to Cart & Book
-                    </button>
-                </div>
-            </div>
-
             <div class="procedure-card">
                 <div class="card-image-container"><img src="hydrafacial.jpg" alt="Hydrafacial"></div>
                 <div class="card-content"><h3>Hydrafacial</h3><p>Deep cleansing, exfoliation and hydration for a healthy, glowing complexion.</p><a href="hydrafacial.html" class="learn-more">Learn more</a></div>
@@ -462,6 +505,10 @@
                 <div class="card-image-container"><img src="chemical-peels.jpg" alt="Chemical Peels"></div>
                 <div class="card-content"><h3>Chemical Peels</h3><p>Exfoliate and renew skin to improve tone, texture and reduce imperfections.</p><a href="chemical-peels.html" class="learn-more">Learn more</a></div>
             </div>
+            <div class="procedure-card">
+                <div class="card-image-container"><img src="laser-hair-removal.jpg" alt="Laser Hair Removal"></div>
+                <div class="card-content"><h3>Laser Hair Removal</h3><p>Long-term hair reduction for smooth, clear and hassle-free skin.</p><a href="laser-hair-removal.html" class="learn-more">Learn more</a></div>
+            </div>
         </div>
     </section>
 
@@ -474,7 +521,15 @@
             <div class="feature-card"><div class="feature-icon">💉</div><h3>Procedure Guide</h3><p>Understand treatments, benefits, risks, recovery time, and expected results before booking.</p></div>
             <div class="feature-card"><div class="feature-icon">💬</div><h3>Real Reviews</h3><p>Read authentic experiences from real clients to choose the best clinic with confidence.</p></div>
             <div class="feature-card"><div class="feature-icon">💰</div><h3>Compare Prices</h3><p>View estimated prices from different clinics before making a decision.</p></div>
-            <div class="feature-card"><div class="feature-icon">📅</div><h3>Book Online</h3><p>Schedule appointments quickly and securely through our integrated booking cart.</p></div>
+            
+            <!-- CLICKABLE BOOK ONLINE CARD -->
+            <div class="feature-card clickable" onclick="openBookingModal()">
+                <div class="feature-icon">📅</div>
+                <h3>Book Online</h3>
+                <p>Schedule appointments quickly and securely through our integrated booking system.</p>
+                <span class="book-now-hint">Click to Book →</span>
+            </div>
+            
             <div class="feature-card"><div class="feature-icon">❤️</div><h3>Beauty Community</h3><p>Share experiences, ratings, recommendations, and help others find trusted specialists.</p></div>
         </div>
     </section>
@@ -659,7 +714,7 @@
     <section id="contact" class="cta-section">
         <h2>Ready to Discover Better Beauty Care?</h2>
         <p>Join DerMap and find trusted clinics, compare treatments, and book your next appointment with confidence.</p>
-        <a href="#procedures" class="cta-button-white">Book a Consultation</a>
+        <button onclick="openBookingModal()" class="cta-button-white">Book a Consultation</button>
     </section>
 
     <!-- Footer -->
@@ -667,19 +722,54 @@
         <p>&copy; 2026 DerMap. All Rights Reserved.</p>
     </footer>
 
-    <!-- ========================================== -->
-    <!-- SNIPCART CONFIGURATION (BOOKING CART)      -->
-    <!-- ========================================== -->
-    <!-- ⚠️ REPLACE "YOUR_PUBLIC_API_KEY" WITH YOUR ACTUAL SNIPCART KEY -->
-    <div hidden id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY" data-config-modal-style="side"></div>
-    <script async src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" class="modal-overlay" onclick="closeBookingModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>Book Your Appointment</h2>
+                <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="booking-options">
+                    <div class="booking-option">
+                        <h3>Initial Skin Consultation</h3>
+                        <p>30-minute personalized assessment with a licensed specialist to build your custom skincare routine.</p>
+                        <div class="price">$50.00</div>
+                        <button class="cta-button" onclick="selectBooking('consultation')">Select This Service</button>
+                    </div>
+                    
+                    <div class="booking-option">
+                        <h3>Hydrafacial Treatment</h3>
+                        <p>Deep cleansing, exfoliation and hydration for a healthy, glowing complexion.</p>
+                        <div class="price">$150.00</div>
+                        <button class="cta-button" onclick="selectBooking('hydrafacial')">Select This Service</button>
+                    </div>
+                    
+                    <div class="booking-option">
+                        <h3>Microneedling Session</h3>
+                        <p>Stimulates collagen production to reduce scars, fine lines and improve texture.</p>
+                        <div class="price">$200.00</div>
+                        <button class="cta-button" onclick="selectBooking('microneedling')">Select This Service</button>
+                    </div>
+                </div>
 
-    <!-- ========================================== -->
-    <!-- DERMAP CONSULTATION CHAT WIDGET (Crisp)    -->
-    <!-- ========================================== -->
+                <!-- Calendly Integration Section -->
+                <div class="calendly-container">
+                    <h3>Or Schedule Directly</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Choose a time that works best for you using our calendar:</p>
+                    <!-- Replace with your Calendly embed code -->
+                    <div style="background: #f8f9fa; padding: 3rem; text-align: center; border: 2px dashed #e57373;">
+                        <p style="margin-bottom: 1rem; font-weight: 500;">Calendly Widget Will Appear Here</p>
+                        <p style="font-size: 0.9rem; color: #666;">Sign up at <a href="https://calendly.com" target="_blank" style="color: #e57373;">calendly.com</a> and paste your embed code here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHAT WIDGET SCRIPT (Crisp) -->
     <script type="text/javascript">
       window.$crisp=[];
-      // ⚠️ REPLACE "YOUR_WEBSITE_ID_HERE" WITH YOUR ACTUAL CRISP WEBSITE ID
       window.CRISP_WEBSITE_ID="YOUR_WEBSITE_ID_HERE";
       (function(){
         var d=document;
@@ -688,6 +778,36 @@
         s.async=1;
         d.getElementsByTagName("head")[0].appendChild(s);
       })();
+    </script>
+
+    <!-- MODAL JAVASCRIPT -->
+    <script>
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal(event) {
+            if (!event || event.target.id === 'bookingModal' || event.target.className === 'modal-close') {
+                document.getElementById('bookingModal').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function selectBooking(service) {
+            // Here you can integrate with Calendly or your booking system
+            alert('You selected: ' + service + '. In a full implementation, this would open the calendar to schedule your appointment.');
+            
+            // Example: You could redirect to Calendly with pre-filled info
+            // window.location.href = 'https://calendly.com/your-link?service=' + service;
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeBookingModal();
+            }
+        });
     </script>
 
 </body>
