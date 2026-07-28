@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DerMap | Discover Trusted Beauty Clinics</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
         :root {
             --primary: #102A46;
-            --secondary: #f3f3f3;
-            --accent: #E8B4B8;
+            --accent-blue: #A8D8EA;
+            --accent-light: #D4E9F7;
+            --accent-soft: #E8F4F8;
+            --glass-bg: rgba(168, 216, 234, 0.25);
+            --glass-border: rgba(168, 216, 234, 0.5);
             --text-dark: #102A46;
-            --text-light: #6B7280;
-            --glass-bg: rgba(255, 255, 255, 0.25);
-            --glass-border: rgba(255, 255, 255, 0.4);
-            --glass-shadow: 0 8px 32px 0 rgba(16, 42, 70, 0.15);
+            --text-light: #5A7A8A;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,9 +24,9 @@
             font-family: 'Inter', sans-serif; 
             line-height: 1.6; 
             color: var(--text-dark);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background: linear-gradient(135deg, #E8F4F8 0%, #D4E9F7 25%, #A8D8EA 50%, #C5E3F6 75%, #E8F4F8 100%);
             background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            animation: gradientShift 18s ease infinite;
             overflow-x: hidden;
         }
 
@@ -50,15 +50,15 @@
         .floating-shape {
             position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.5;
+            filter: blur(100px);
+            opacity: 0.6;
             animation: floatShape 20s infinite ease-in-out;
         }
 
         .shape-1 {
             width: 500px;
             height: 500px;
-            background: rgba(232, 180, 184, 0.5);
+            background: rgba(168, 216, 234, 0.6);
             top: -100px;
             right: -100px;
         }
@@ -66,7 +66,7 @@
         .shape-2 {
             width: 400px;
             height: 400px;
-            background: rgba(16, 42, 70, 0.3);
+            background: rgba(197, 227, 246, 0.6);
             bottom: -50px;
             left: -50px;
             animation-delay: 7s;
@@ -75,7 +75,7 @@
         .shape-3 {
             width: 350px;
             height: 350px;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(212, 233, 247, 0.5);
             top: 50%;
             left: 50%;
             animation-delay: 14s;
@@ -88,28 +88,20 @@
         }
 
         /* Glass Utility */
-        .glass {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--glass-shadow);
-        }
-
         .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             border-radius: 24px;
-            box-shadow: 0 8px 32px rgba(16, 42, 70, 0.1);
+            box-shadow: 0 8px 32px rgba(16, 42, 70, 0.08);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(16, 42, 70, 0.2);
-            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 60px rgba(16, 42, 70, 0.15);
+            background: rgba(255, 255, 255, 0.7);
         }
 
         /* Navigation */
@@ -121,10 +113,10 @@
             position: sticky; 
             top: 0; 
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(232, 244, 248, 0.7);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
         }
         
         .logo { 
@@ -152,78 +144,194 @@
         }
 
         .nav-links a:hover { 
-            background: rgba(16, 42, 70, 0.1);
+            background: rgba(168, 216, 234, 0.3);
             color: var(--primary);
         }
 
-        /* Hero Section */
-        .hero { 
-            padding: 6rem 5% 4rem; 
+        /* ============ HERO HEADER - Magazine Style ============ */
+        .hero-header {
             position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
+            padding: 4rem 5%;
         }
 
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
+        .hero-header-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
         }
 
-        .hero-badge { 
-            display: inline-block; 
-            padding: 0.6rem 1.5rem; 
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-            color: var(--primary); 
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 50px;
-            font-size: 0.85rem; 
-            font-weight: 600; 
+        .hero-header-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(2px);
+        }
+
+        .hero-header-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                rgba(232, 244, 248, 0.7) 0%, 
+                rgba(212, 233, 247, 0.5) 50%, 
+                rgba(168, 216, 234, 0.6) 100%);
+        }
+
+        .hero-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-image-container {
+            position: relative;
+            height: 600px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(16, 42, 70, 0.2);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s;
+        }
+
+        .hero-image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Split blur effect */
+        .hero-image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: inherit;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Rectangle frame with crosshair */
+        .hero-frame {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 60%;
+            height: 70%;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-frame::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-frame::before,
+        .hero-frame::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-frame::before {
+            width: 2px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-frame::after {
+            width: 20px;
+            height: 2px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-text-content {
+            color: var(--primary);
+        }
+
+        .hero-text-content .eyebrow {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
         }
 
-        .hero h1 { 
-            font-size: 3.5rem; 
-            color: var(--primary); 
-            margin-bottom: 1.5rem; 
-            line-height: 1.2;
-            font-weight: 800;
-        }
-
-        .hero p { 
-            font-size: 1.2rem; 
-            color: rgba(255, 255, 255, 0.9); 
-            max-width: 700px; 
-            margin: 0 auto 3rem;
+        .hero-text-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
             font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .hero-text-content h1 em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .hero-text-content .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
         }
 
         /* Search Bar */
         .search-container {
-            max-width: 800px;
-            margin: 3rem auto;
+            max-width: 600px;
+            margin-bottom: 2rem;
         }
 
         .search-box {
             display: flex;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 60px;
             padding: 0.5rem;
-            box-shadow: 0 10px 40px rgba(16, 42, 70, 0.15);
+            box-shadow: 0 10px 40px rgba(16, 42, 70, 0.1);
         }
 
         .search-input {
             flex: 1;
             border: none;
-            padding: 1.2rem 1.5rem;
+            padding: 1rem 1.5rem;
             font-size: 1rem;
             background: transparent;
             outline: none;
             color: var(--primary);
+            font-family: 'Inter', sans-serif;
         }
 
         .search-input::placeholder {
@@ -231,14 +339,15 @@
         }
 
         .search-btn {
-            padding: 1.2rem 2.5rem;
+            padding: 1rem 2rem;
             background: var(--primary);
             color: white;
             border: none;
-            border-radius: 16px;
+            border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
         }
 
         .search-btn:hover {
@@ -246,25 +355,36 @@
             transform: translateY(-2px);
         }
 
+        .hero-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            max-width: 500px;
+            line-height: 1.7;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(16, 42, 70, 0.15);
+        }
+
         /* Quick Categories */
         .quick-categories {
             display: flex;
-            justify-content: center;
             gap: 1rem;
             flex-wrap: wrap;
             margin-top: 2rem;
         }
 
         .category-pill {
-            padding: 0.8rem 1.5rem;
+            padding: 0.7rem 1.3rem;
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s;
             font-weight: 500;
             color: var(--text-dark);
+            font-size: 0.9rem;
         }
 
         .category-pill:hover {
@@ -285,27 +405,33 @@
         }
 
         .section-title { 
-            font-size: 2.8rem; 
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem; 
             color: var(--primary); 
             margin-bottom: 1rem;
-            font-weight: 800;
+            font-weight: 400;
+        }
+
+        .section-title strong {
+            font-weight: 700;
         }
 
         .section-subtitle { 
-            color: rgba(255, 255, 255, 0.9); 
-            font-size: 1.2rem; 
+            color: var(--text-light); 
+            font-size: 1.15rem; 
             max-width: 600px; 
             margin: 0 auto;
         }
 
         /* Stats Section */
         .stats-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 40px;
-            margin: 4rem auto;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(30px);
+            border-radius: 32px;
+            margin: 0 auto 4rem;
             max-width: 1200px;
             padding: 4rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .stats-grid {
@@ -316,16 +442,19 @@
         }
 
         .stat-item h3 {
-            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
             color: var(--primary);
-            font-weight: 800;
+            font-weight: 400;
             margin-bottom: 0.5rem;
         }
 
         .stat-item p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
+            color: var(--text-light);
+            font-size: 1rem;
             font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         /* Procedures Grid */
@@ -354,7 +483,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, transparent 40%, rgba(16, 42, 70, 0.7) 100%);
+            background: linear-gradient(to bottom, transparent 40%, rgba(16, 42, 70, 0.5) 100%);
         }
 
         .card-image-container img { 
@@ -404,12 +533,13 @@
 
         /* How It Works */
         .how-it-works {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border-radius: 40px;
-            margin: 4rem auto;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(30px);
+            border-radius: 32px;
+            margin: 0 auto 4rem;
             max-width: 1200px;
             padding: 5rem 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .steps-grid {
@@ -425,7 +555,7 @@
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(20px);
             border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             transition: all 0.4s;
         }
 
@@ -446,6 +576,7 @@
             font-size: 1.5rem;
             font-weight: 800;
             margin: 0 auto 1.5rem;
+            font-family: 'Playfair Display', serif;
         }
 
         .step-card h3 {
@@ -462,12 +593,13 @@
 
         /* Clinics Section */
         .clinics-section { 
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 40px;
-            margin: 4rem auto;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border-radius: 32px;
+            margin: 0 auto 4rem;
             max-width: 1400px;
             padding: 5rem 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .clinics-container {
@@ -510,7 +642,7 @@
             left: 0;
             right: 0;
             padding: 2rem;
-            background: linear-gradient(to top, rgba(16, 42, 70, 0.9), transparent);
+            background: linear-gradient(to top, rgba(16, 42, 70, 0.85), transparent);
             color: white;
         }
 
@@ -540,6 +672,7 @@
 
         .clinic-body {
             padding: 2rem;
+            background: rgba(255, 255, 255, 0.5);
         }
 
         .clinic-stats {
@@ -571,12 +704,13 @@
         }
 
         .tag {
-            background: rgba(232, 180, 184, 0.3);
+            background: rgba(168, 216, 234, 0.4);
             color: var(--primary);
             padding: 0.4rem 1rem;
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 600;
+            backdrop-filter: blur(10px);
         }
 
         .clinic-actions {
@@ -594,6 +728,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
         }
 
         .btn-primary:hover {
@@ -610,6 +745,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
         }
 
         .btn-secondary:hover {
@@ -618,12 +754,13 @@
 
         /* Testimonials */
         .testimonials-section {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border-radius: 40px;
-            margin: 4rem auto;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(30px);
+            border-radius: 32px;
+            margin: 0 auto 4rem;
             max-width: 1200px;
             padding: 5rem 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .testimonials-grid {
@@ -638,13 +775,13 @@
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
             border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             transition: all 0.4s;
         }
 
         .testimonial-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(16, 42, 70, 0.15);
+            box-shadow: 0 20px 60px rgba(16, 42, 70, 0.12);
         }
 
         .testimonial-header {
@@ -659,7 +796,7 @@
             height: 60px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.5);
+            border: 3px solid rgba(168, 216, 234, 0.5);
         }
 
         .testimonial-info h4 {
@@ -675,7 +812,7 @@
         }
 
         .testimonial-stars {
-            color: #FFD700;
+            color: #FFB800;
             font-size: 1.2rem;
             margin-bottom: 1rem;
         }
@@ -689,12 +826,13 @@
 
         /* FAQ Section */
         .faq-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 40px;
-            margin: 4rem auto;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(30px);
+            border-radius: 32px;
+            margin: 0 auto 4rem;
             max-width: 1000px;
             padding: 5rem 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .faq-list {
@@ -702,9 +840,9 @@
         }
 
         .faq-item {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             border-radius: 16px;
             margin-bottom: 1.5rem;
             overflow: hidden;
@@ -724,6 +862,17 @@
             font-weight: 600;
             color: var(--primary);
             font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .faq-question .icon {
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question .icon {
+            transform: rotate(45deg);
         }
 
         .faq-answer {
@@ -738,21 +887,22 @@
         }
 
         .faq-item.active .faq-question {
-            background: rgba(16, 42, 70, 0.05);
+            background: rgba(168, 216, 234, 0.2);
         }
 
         /* CTA Section */
         .cta-section { 
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(20px);
-            border-radius: 40px;
-            margin: 4rem auto;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(30px);
+            border-radius: 32px;
+            margin: 0 auto 4rem;
             max-width: 1200px;
             color: var(--primary); 
             text-align: center; 
             padding: 6rem 3rem;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .cta-section::before {
@@ -762,7 +912,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(168, 216, 234, 0.4) 0%, transparent 70%);
             animation: pulse 4s ease-in-out infinite;
         }
 
@@ -772,16 +922,21 @@
         }
 
         .cta-section h2 { 
+            font-family: 'Playfair Display', serif;
             font-size: 3rem; 
             margin-bottom: 1.5rem; 
-            font-weight: 800;
+            font-weight: 400;
             position: relative;
+        }
+
+        .cta-section h2 strong {
+            font-weight: 700;
         }
 
         .cta-section p { 
             font-size: 1.2rem; 
             margin-bottom: 2.5rem; 
-            opacity: 0.9;
+            color: var(--text-light);
             max-width: 600px; 
             margin-left: auto; 
             margin-right: auto;
@@ -814,7 +969,7 @@
             color: rgba(255, 255, 255, 0.8); 
             text-align: center; 
             padding: 3rem 5%; 
-            border-radius: 40px 40px 0 0;
+            border-radius: 32px 32px 0 0;
             margin-top: 4rem;
         }
 
@@ -831,12 +986,37 @@
         }
 
         /* Responsive */
+        @media (max-width: 968px) {
+            .hero-header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-image-container {
+                height: 500px;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .hero-text-content h1 {
+                font-size: 3rem;
+            }
+            .search-container {
+                margin: 0 auto 2rem;
+            }
+            .hero-quote {
+                margin: 0 auto;
+            }
+            .quick-categories {
+                justify-content: center;
+            }
+        }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero-text-content h1 { font-size: 2.5rem; }
             .section-title { font-size: 2rem; }
             .nav-links { display: none; }
             .clinics-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .cta-section h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -860,28 +1040,38 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">✨ Your Beauty Journey Starts Here</div>
-            <h1>Discover Trusted<br>Beauty Clinics</h1>
-            <p>Find the best cosmetic procedures, compare clinics, read reviews, and book appointments with confidence.</p>
-            
-            <!-- Search Bar -->
-            <div class="search-container">
-                <div class="search-box">
-                    <input type="text" class="search-input" placeholder="Search service, clinic, or procedure...">
-                    <button class="search-btn">Search</button>
-                </div>
+    <!-- ============ HERO HEADER - Magazine Style ============ -->
+    <section class="hero-header">
+        <div class="hero-header-bg">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&q=80" alt="Beauty">
+        </div>
+        
+        <div class="hero-header-content">
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80" alt="Beauty Model">
+                <div class="hero-frame"></div>
             </div>
-
-            <!-- Quick Categories -->
-            <div class="quick-categories">
-                <div class="category-pill">🔥 Popular</div>
-                <div class="category-pill">💉 Botox</div>
-                <div class="category-pill">✨ Facial</div>
-                <div class="category-pill">🧴 Skin Care</div>
-                <div class="category-pill">💆 Wellness</div>
+            
+            <div class="hero-text-content">
+                <p class="eyebrow">— beauty & wellness</p>
+                <h1>she<br><em>may be the</em><br>mirror of my dreams</h1>
+                <p class="hero-desc">Discover the best cosmetic procedures, compare trusted clinics, read authentic reviews, and book appointments — all in one place.</p>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search service, clinic, or procedure...">
+                        <button class="search-btn">Search</button>
+                    </div>
+                </div>
+                
+                <div class="quick-categories">
+                    <div class="category-pill">🔥 Popular</div>
+                    <div class="category-pill">💉 Botox</div>
+                    <div class="category-pill">✨ Facial</div>
+                    <div class="category-pill">🧴 Skin Care</div>
+                </div>
+                
+                <p class="hero-quote">Beauty is not just about what we see on the surface; it is a reflection of a person's soul. While physical appearance may catch the eye, it is kindness, confidence, and a positive heart that truly leave a lasting impression. As the saying goes, 'Real beauty shines from within.'</p>
             </div>
         </div>
     </section>
@@ -908,99 +1098,99 @@
         </div>
     </section>
 
-    <!-- Procedures Section -->
+    <!-- Procedures Section - Original Local Images -->
     <section id="procedures">
         <div class="section-header">
-            <h2 class="section-title">Popular Procedures</h2>
+            <h2 class="section-title">Popular <strong>Procedures</strong></h2>
             <p class="section-subtitle">Explore our comprehensive range of cosmetic treatments</p>
         </div>
         
         <div class="procedures-grid">
             <div class="procedure-card glass-card fade-in">
                 <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600" alt="Hydrafacial">
+                    <img src="hydrafacial.jpg" alt="Hydrafacial">
                 </div>
                 <div class="card-content">
                     <h3>Hydrafacial</h3>
                     <p>Deep cleansing, exfoliation and hydration for a healthy, glowing complexion.</p>
-                    <a href="#" class="learn-more">Learn more →</a>
+                    <a href="hydrafacial.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
 
             <div class="procedure-card glass-card fade-in">
                 <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600" alt="Microneedling">
+                    <img src="microneedling.jpg" alt="Microneedling">
                 </div>
                 <div class="card-content">
                     <h3>Microneedling</h3>
                     <p>Stimulates collagen production to reduce scars, fine lines and improve texture.</p>
-                    <a href="#" class="learn-more">Learn more →</a>
+                    <a href="microneedling.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
 
             <div class="procedure-card glass-card fade-in">
                 <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600" alt="Botox">
+                    <img src="botox.jpg" alt="Botox">
                 </div>
                 <div class="card-content">
                     <h3>Botox</h3>
                     <p>Smooth dynamic wrinkles and prevent new fine lines from forming.</p>
-                    <a href="#" class="learn-more">Learn more →</a>
+                    <a href="botox.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
 
             <div class="procedure-card glass-card fade-in">
                 <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600" alt="Dermal Fillers">
+                    <img src="dermal-fillers.jpg" alt="Dermal Fillers">
                 </div>
                 <div class="card-content">
                     <h3>Dermal Fillers</h3>
                     <p>Restore volume, enhance contours and achieve natural-looking results.</p>
-                    <a href="#" class="learn-more">Learn more →</a>
+                    <a href="dermal-fillers.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
 
             <div class="procedure-card glass-card fade-in">
                 <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1560750588-7320c20d0168?w=600" alt="Chemical Peels">
+                    <img src="chemical-peels.jpg" alt="Chemical Peels">
                 </div>
                 <div class="card-content">
                     <h3>Chemical Peels</h3>
                     <p>Exfoliate and renew skin to improve tone, texture and reduce imperfections.</p>
-                    <a href="#" class="learn-more">Learn more →</a>
+                    <a href="chemical-peels.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
 
             <div class="procedure-card glass-card fade-in">
                 <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1560069891-7017a5813e56?w=600" alt="Laser Hair Removal">
+                    <img src="laser-hair-removal.jpg" alt="Laser Hair Removal">
                 </div>
                 <div class="card-content">
                     <h3>Laser Hair Removal</h3>
                     <p>Long-term hair reduction for smooth, clear and hassle-free skin.</p>
-                    <a href="#" class="learn-more">Learn more →</a>
+                    <a href="laser-hair-removal.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
 
             <div class="procedure-card glass-card fade-in">
                 <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1519823551278-64ac927ac4b1?w=600" alt="Laser Resurfacing">
+                    <img src="laser-resurfacing.jpg" alt="Laser Resurfacing">
                 </div>
                 <div class="card-content">
                     <h3>Laser Resurfacing</h3>
                     <p>Improve skin texture, tone and reduce scars and sun damage.</p>
-                    <a href="#" class="learn-more">Learn more →</a>
+                    <a href="laser-resurfacing.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
 
             <div class="procedure-card glass-card fade-in">
                 <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1552693673-1bfbe68f55b7?w=600" alt="PRP Therapy">
+                    <img src="prp-therapy.jpg" alt="PRP Therapy">
                 </div>
                 <div class="card-content">
                     <h3>PRP Therapy</h3>
                     <p>Uses your own plasma to promote healing and natural rejuvenation.</p>
-                    <a href="#" class="learn-more">Learn more →</a>
+                    <a href="prp-therapy.html" class="learn-more">Learn more →</a>
                 </div>
             </div>
         </div>
@@ -1009,7 +1199,7 @@
     <!-- How It Works -->
     <section id="how-it-works" class="how-it-works glass-card">
         <div class="section-header">
-            <h2 class="section-title">How It Works</h2>
+            <h2 class="section-title">How It <strong>Works</strong></h2>
             <p class="section-subtitle">Book your perfect treatment in 3 simple steps</p>
         </div>
         
@@ -1036,7 +1226,7 @@
     <section id="clinics" class="clinics-section glass-card">
         <div class="clinics-container">
             <div class="section-header">
-                <h2 class="section-title">Top Rated Clinics</h2>
+                <h2 class="section-title">Top Rated <strong>Clinics</strong></h2>
                 <p class="section-subtitle">Trusted professionals with verified reviews</p>
             </div>
             
@@ -1053,12 +1243,12 @@
                     <div class="clinic-body">
                         <div class="clinic-stats">
                             <div class="stat">
-                                <span>👨‍⚕️</span>
+                                <span>‍⚕️</span>
                                 <strong>8 Years</strong>
                                 <span>Experience</span>
                             </div>
                             <div class="stat">
-                                <span>👥</span>
+                                <span></span>
                                 <strong>3.5k+</strong>
                                 <span>Patients</span>
                             </div>
@@ -1165,7 +1355,7 @@
     <!-- Testimonials -->
     <section id="testimonials" class="testimonials-section glass-card">
         <div class="section-header">
-            <h2 class="section-title">What Our Clients Say</h2>
+            <h2 class="section-title">What Our Clients <strong>Say</strong></h2>
             <p class="section-subtitle">Real experiences from real people</p>
         </div>
         
@@ -1211,7 +1401,7 @@
     <!-- FAQ Section -->
     <section id="faq" class="faq-section glass-card">
         <div class="section-header">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title">Frequently Asked <strong>Questions</strong></h2>
             <p class="section-subtitle">Everything you need to know about DerMap</p>
         </div>
         
@@ -1219,7 +1409,7 @@
             <div class="faq-item fade-in">
                 <div class="faq-question">
                     <span>How do I book an appointment?</span>
-                    <span>+</span>
+                    <span class="icon">+</span>
                 </div>
                 <div class="faq-answer">
                     Simply search for your desired procedure or clinic, select your preferred time slot, and confirm your booking. You'll receive a confirmation email immediately.
@@ -1229,7 +1419,7 @@
             <div class="faq-item fade-in">
                 <div class="faq-question">
                     <span>Are the clinics verified?</span>
-                    <span>+</span>
+                    <span class="icon">+</span>
                 </div>
                 <div class="faq-answer">
                     Yes! All clinics on DerMap are thoroughly vetted. We verify licenses, certifications, and credentials to ensure you receive safe, professional care.
@@ -1239,7 +1429,7 @@
             <div class="faq-item fade-in">
                 <div class="faq-question">
                     <span>Can I cancel or reschedule?</span>
-                    <span>+</span>
+                    <span class="icon">+</span>
                 </div>
                 <div class="faq-answer">
                     Absolutely! You can cancel or reschedule your appointment up to 24 hours before your scheduled time through your account dashboard.
@@ -1249,10 +1439,20 @@
             <div class="faq-item fade-in">
                 <div class="faq-question">
                     <span>How do I know which procedure is right for me?</span>
-                    <span>+</span>
+                    <span class="icon">+</span>
                 </div>
                 <div class="faq-answer">
                     Each procedure page includes detailed information about benefits, recovery time, and expected results. You can also consult directly with clinics through our platform.
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>Is my personal information secure?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Your privacy is our top priority. We use industry-standard encryption and never share your personal information with third parties without your consent.
                 </div>
             </div>
         </div>
@@ -1260,7 +1460,7 @@
 
     <!-- CTA Section -->
     <section class="cta-section glass-card">
-        <h2>Start Your Beauty Journey Today</h2>
+        <h2>Start Your <strong>Beauty Journey</strong> Today</h2>
         <p>Join thousands of satisfied clients who found their perfect clinic through DerMap.</p>
         <a href="#" class="cta-button">Get Started Now</a>
     </section>
@@ -1288,12 +1488,10 @@
                 const item = question.parentElement;
                 const isActive = item.classList.contains('active');
                 
-                // Close all
                 document.querySelectorAll('.faq-item').forEach(faq => {
                     faq.classList.remove('active');
                 });
                 
-                // Open clicked if wasn't active
                 if (!isActive) {
                     item.classList.add('active');
                 }
